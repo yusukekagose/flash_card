@@ -70,4 +70,6 @@ gem 'compass-core', '~> 1.0', '>= 1.0.3'
 gem 'compass-import-once', '~> 1.0', '>= 1.0.5'
 gem 'rubyzip', '~> 1.2', '>= 1.2.1'
 
+gem 'devise', '~> 4.3'
+
 
