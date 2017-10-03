@@ -72,4 +72,7 @@ gem 'rubyzip', '~> 1.2', '>= 1.2.1'
 
 gem 'devise', '~> 4.3'
 
+gem 'bootstrap', '~> 4.0.0.beta'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+
 
