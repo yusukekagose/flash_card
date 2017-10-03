@@ -13,10 +13,6 @@ module ApplicationHelper
     [
       {
         url: root_path,
-        title: 'Home'
-      },
-      {
-        url: root_path,
         title: '単語帳'
       }
     ]
