@@ -16,18 +16,33 @@
   </thead>
 
   <tbody>
-    <% @meanings.each do |meaning| %>
+    <%  @words.each do |word| %>
+    <% word.meanings.first(1).each do |word_meaning| %>
       <tr>
-        <td><%= meaning.word.english_word %></td>
-        <td><%= meaning.meaning %></td>
-        <td><%= meaning.parse %></td>
-        <td><%= meaning.toeic %></td>
-        <td><%= meaning.eiken %></td>
-        <td><%= meaning.toeic %></td>
-        <td><%= link_to 'Show', meaning %></td>
-        <td><%= link_to 'Edit', edit_meaning_path(meaning) %></td>
-        <td><%= link_to 'Destroy', meaning, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= word.english_word %></td>
+        <td><%= word_meaning.meaning %></td>
+        <td><%= word_meaning.parse %></td>
+        <td><%= word_meaning.toeic %></td>
+        <td><%= word_meaning.eiken %></td>
+        <td><%= word_meaning.toeic %></td>
+        <td><%= link_to 'Show',meaning_path(word_meaning.id) %></td>
+        <td><%= link_to 'Edit', edit_meaning_path(word_meaning.id) %></td>
+        <td><%= link_to 'Destroy', meaning_path(word_meaning), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+    <% end %>
+    <% word.meanings.drop(1).each do |word_meaning| %>
+      <tr>
+        <td></td>
+        <td><%= word_meaning.meaning %></td>
+        <td><%= word_meaning.parse %></td>
+        <td><%= word_meaning.toeic %></td>
+        <td><%= word_meaning.eiken %></td>
+        <td><%= word_meaning.toeic %></td>
+        <td><%= link_to 'Show', meaning_path(word_meaning.id) %></td>
+        <td><%= link_to 'Edit', edit_meaning_path(word_meaning) %></td>
+        <td><%= link_to 'Destroy', meaning_path(word_meaning), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
