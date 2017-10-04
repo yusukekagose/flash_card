@@ -1,4 +1,4 @@
 class Word < ApplicationRecord
   validates :english_word, uniqueness: true
-  has_many :meanings
+  has_many :meanings, :dependent => :destroy
 end
