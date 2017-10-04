@@ -14,4 +14,6 @@ class User < ApplicationRecord
 
   validates_presence_of :nick_name
 
+  has_many :dictionaries
+
 end

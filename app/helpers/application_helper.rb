@@ -13,6 +13,10 @@ module ApplicationHelper
   def nav_items
     [
       {
+        url: users_show_path,
+        title: 'マイページ'
+      },
+      {
         url: root_path,
         title: '単語帳'
       }
