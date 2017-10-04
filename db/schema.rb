@@ -10,13 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171004062835) do
+ActiveRecord::Schema.define(version: 20171004065903) do
 
   create_table "meanings", force: :cascade do |t|
     t.text "meaning"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "word_id"
+    t.integer "level"
+    t.integer "eiken"
+    t.integer "toeic"
+    t.string "parse"
     t.index ["word_id"], name: "index_meanings_on_word_id"
   end
 

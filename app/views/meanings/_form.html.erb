@@ -19,6 +19,23 @@
     <%= form.label :meaning %>
     <%= form.text_field :meaning %>
   </div>
+  <div class="field">
+    <%= form.label "品詞",:parse %>
+    <%= form.text_field :parse %>
+  </div>
+  <div class="field">
+    <%= form.label "level",:level %>
+    <%= form.text_field :level %>
+  </div>
+
+  <div class="field">
+    <%= form.label "英検",:eiken %>
+    <%= form.text_field :eiken %>
+  </div>
+  <div class="field">
+    <%= form.label "toeic",:toeic %>
+    <%= form.text_field :toeic %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

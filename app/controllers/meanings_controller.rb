@@ -54,6 +54,6 @@ class MeaningsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def meaning_params
-      params.require(:meaning).permit(:meaning, :word_id)
+      params.require(:meaning).permit(:meaning, :word_id,:parse, :level, :eiken, :toeic)
     end
 end
