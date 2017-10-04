@@ -1,10 +1,4 @@
 
-<h1>ようこそ<%= current_user.nick_name %>さん</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<% if current_user.has_roles?(:admin) %>
-<% end %>
-
-
 <%= link_to "単語一覧", words_path %>
 <%= link_to "単語追加", new_word_path %>
 <%= link_to "マイページ",  users_show_path %>
@@ -12,3 +6,11 @@
   <%= link_to "ユーザー一覧",  users_index_path %>
 <% end %>
 
+<div class="container-fluid">
+    <div class="row d-flex d-md-block flex-nowrap wrapper">
+    <%= render "shared/side-bar" %>
+        <main class="col-md-9 float-left col px-5 pl-md-2 pt-2 main">
+        <a href="#" data-target="#sidebar" data-toggle="collapse"><i class="fa fa-navicon fa-2x py-2 p-1"></i></a>
+        </main>
+    </div>
+</div>
