@@ -3,3 +3,8 @@
 <p>Find me in app/views/home/index.html.erb</p>
 <% if current_user.has_roles?(:admin) %>
 <% end %>
+
+
+<%= link_to "単語一覧", words_path %>
+<%= link_to "単語追加", new_word_path %>
+<%= link_to "単語追加", new_word_path %>
