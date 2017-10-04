@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   resources :meanings
-  get 'users/show'
 
-  get 'users/index'
+  resources :users, only: [:show,:index] do
+    collection do
+      get 'dictionary'
+    end
+  end
+
 
   resources :words
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
