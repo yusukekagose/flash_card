@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171004020915) do
+ActiveRecord::Schema.define(version: 20171004062835) do
+
+  create_table "meanings", force: :cascade do |t|
+    t.text "meaning"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "word_id"
+    t.index ["word_id"], name: "index_meanings_on_word_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
