@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :dictionaries do
     collection do
       delete 'destroy_multiple'
+      post 'create_multiple'
     end
   end
 

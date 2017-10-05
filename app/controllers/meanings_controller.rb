@@ -2,6 +2,8 @@ class MeaningsController < ApplicationController
   before_action :set_meaning, only: [:show, :edit, :update, :destroy]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
 
+
+
   # GET /meanings
   def index
     @meanings = Meaning.all

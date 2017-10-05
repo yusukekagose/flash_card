@@ -16,4 +16,6 @@ class User < ApplicationRecord
 
   has_many :dictionaries
 
+
+
 end

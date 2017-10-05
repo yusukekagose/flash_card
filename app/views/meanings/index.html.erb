@@ -7,7 +7,7 @@
 <h1>Meanings</h1>
 
 <table>
- <%= form_tag  new_dictionary_path,method: :get do  %>
+ <%= form_tag(create_multiple_dictionaries_path, method: 'post')  do  %>
   <thead>
     <tr>
       <th>英語</th>
@@ -33,7 +33,7 @@
         <td><%= link_to 'Show',meaning_path(meaning.id) %></td>
         <td><%= link_to 'Edit', edit_meaning_path(meaning.id) %></td>
         <td><%= link_to 'Destroy', meaning_path(meaning), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-         <td><%= check_box_tag "meanig_id[]", meaning.id %></td>
+         <td><%= check_box_tag 'dictionary[meaning_id][]', meaning.id %></td>
       </tr>
     <% end %>
   </tbody>
