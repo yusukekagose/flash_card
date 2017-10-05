@@ -13,12 +13,18 @@
     <%= render "shared/nav-bar" %>
     <%= render "shared/sub_nav_bar" %>
     <% if flash[:notice] %>
-      <div class="alert alert-success">
+      <div class="alert alert-success alert-dismissible fadeshow">
+      <button class="close" data-dismiss="alert" type="button">
+        <span>&times;</span>
+      </button>
         <%= flash[:notice] %>
       </div>
     <% end %>
     <% if flash[:alert] %>
-      <div class="alert alert-danger">
+      <div class="alert alert-danger alert-dismissible fadeshow">
+      <button class="close" data-dismiss="alert" type="button">
+        <span>&times;</span>
+      </button>
         <%= flash[:alert] %>
       </div>
     <% end %>

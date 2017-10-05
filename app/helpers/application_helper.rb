@@ -12,10 +12,7 @@ module ApplicationHelper
 
   def nav_items
     [
-      {
-        url: user_path(current_user),
-        title: 'マイページ'
-      },
+
       {
         url: dictionary_users_path,
         title: '単語帳'
