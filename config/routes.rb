@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+  resources :dictionaries do
+    collection do
+      delete 'destroy_multiple'
+    end
+  end
+
   resources :meanings
+
+  resources :dictionaries, only:[:new,:create,:destroy] 
 
   resources :users, only: [:show,:index] do
     collection do

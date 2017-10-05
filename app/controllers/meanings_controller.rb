@@ -6,6 +6,7 @@ class MeaningsController < ApplicationController
   def index
     @meanings = Meaning.all
     @words = Word.all
+    @dictionary = Dictionary.new
   end
 
   # GET /meanings/1

@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+
+
+<br>
+
 <h1>Meanings</h1>
 
 <table>
+ <%= form_tag  new_dictionary_path,method: :get do  %>
   <thead>
     <tr>
       <th>英語</th>
@@ -11,42 +16,29 @@
       <th>toeic</th>
       <th>英検</th>
       <th>edit</th>
+      <th><%= submit_tag "単語帳に追加" %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <%  @words.each do |word| %>
-    <% word.meanings.first(1).each do |word_meaning| %>
+    <% @meanings.each do |meaning| %>
       <tr>
-        <td><%= word.english_word %></td>
-        <td><%= word_meaning.meaning %></td>
-        <td><%= word_meaning.parse %></td>
-        <td><%= word_meaning.toeic %></td>
-        <td><%= word_meaning.eiken %></td>
-        <td><%= word_meaning.toeic %></td>
-        <td><%= link_to 'Show',meaning_path(word_meaning.id) %></td>
-        <td><%= link_to 'Edit', edit_meaning_path(word_meaning.id) %></td>
-        <td><%= link_to 'Destroy', meaning_path(word_meaning), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= meaning.word.english_word %></td>
+        <td><%= meaning.meaning %></td>
+        <td><%= meaning.parse %></td>
+        <td><%= meaning.toeic %></td>
+        <td><%= meaning.eiken %></td>
+        <td><%= meaning.toeic %></td>
+        <td><%= link_to 'Show',meaning_path(meaning.id) %></td>
+        <td><%= link_to 'Edit', edit_meaning_path(meaning.id) %></td>
+        <td><%= link_to 'Destroy', meaning_path(meaning), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <td><%= check_box_tag "meanig_id[]", meaning.id %></td>
       </tr>
-    <% end %>
-    <% word.meanings.drop(1).each do |word_meaning| %>
-      <tr>
-        <td></td>
-        <td><%= word_meaning.meaning %></td>
-        <td><%= word_meaning.parse %></td>
-        <td><%= word_meaning.toeic %></td>
-        <td><%= word_meaning.eiken %></td>
-        <td><%= word_meaning.toeic %></td>
-        <td><%= link_to 'Show', meaning_path(word_meaning.id) %></td>
-        <td><%= link_to 'Edit', edit_meaning_path(word_meaning) %></td>
-        <td><%= link_to 'Destroy', meaning_path(word_meaning), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
     <% end %>
   </tbody>
+<% end %>
 </table>
 
-<br>
 
 <%= link_to 'New Meaning', new_meaning_path %>

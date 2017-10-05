@@ -1,4 +1,7 @@
+<%= form_tag destroy_multiple_dictionaries_path, method: :delete do %>
 <% @user_dictionary.each do |word|%>
   <p><%= word.meaning.word.english_word %>
-  <%= word.meaning.meaning %></p>
+  <%= word.meaning.meaning %><%= check_box_tag "deletes[#{ word.id }]", word.id  %></p>
+<% end %>
+<%= submit_tag "一括消去",class: "btn-primary example-button" %>
 <% end %>
