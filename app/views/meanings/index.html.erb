@@ -1,9 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 
-
-<br>
-
+<div class="container-90 mx-auto">
 <h1>Meanings</h1>
 
 <table class="table table-hover">
@@ -20,7 +18,7 @@
       <th>英検</th>
       <th>edit</th>
       <th colspan="3"></th>
-      <th><%= submit_tag "単語帳に追加" %></th>
+      <th><%= submit_tag "単語帳に追加", class: "btn btn-primary" %></th>
     </tr>
   </thead>
 
@@ -32,12 +30,12 @@
         <td><%= meaning.meaning %></td>
         <td><%= meaning.parse %></td>
         <td>
-        <% meaning.examples.first(3).each do |meaning_example| %>
+        <% meaning.examples.first(1).each do |meaning_example| %>
         <%= meaning_example.sentence %><br>
         <%= meaning_example.translation %><br>
         <% end %>
         </td>
-        <td><%= link_to "例文に", meaning_path(meaning.id) %></td>
+        <td><%= link_to "例文一覧", meaning_path(meaning.id) , class: "btn-sm btn-primary" %></td>
         <td><%= meaning.toeic %></td>
         <td><%= meaning.eiken %></td>
         <td><%= meaning.toeic %></td>
@@ -53,3 +51,4 @@
 
 
 <%= link_to 'New Meaning', new_meaning_path %>
+</div>

@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
-
+<div class="mx-auto container-90"
 <p>
   <strong>Meaning:</strong>
   <%= @meaning.meaning %>
 </p>
 
 <% @examples.each do |example| %>
-<div class="row">
+<div class="row mb-1">
   <%= example.sentence %>
   <%= example.translation %>
+  <%= link_to 'Edit', edit_example_path(example.id) %>
 </div>
 <% end %>
 

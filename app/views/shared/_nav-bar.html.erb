@@ -10,14 +10,14 @@
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
-    <ul class="navbar-nav ml-auto nav-bar-items">
+    <div class="navbar-nav ml-auto nav-bar-items">
     <% if current_user.is_a?(GuestUser)
        %>
     <% else %>
-      <%= nav_helper 'btn btn-outline-primary' ,'li ' %>
+      <%= nav_helper 'btn btn-outline-primary' ,'div' %>
     <% end %>
       <%= login_helper 'btn btn-outline-primary'%>
-    </ul>
+    </div>
   </div>
 </div>
 </nav>
