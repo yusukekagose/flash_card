@@ -2,6 +2,9 @@ class MeaningsController < ApplicationController
   before_action :set_meaning, only: [:show, :edit, :update, :destroy]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
 
+  def example
+    @similar_example = Meaning.includes(:examples).where('meaning.id' => meaning_id)
+  end
 
 
   # GET /meanings
@@ -13,6 +16,7 @@ class MeaningsController < ApplicationController
 
   # GET /meanings/1
   def show
+    @examples = @meaning.examples
   end
 
   # GET /meanings/new
