@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sentence:</strong>
+  <%= @example.sentence %>
+</p>
+
+<p>
+  <strong>Translation:</strong>
+  <%= @example.translation %>
+</p>
+
+<p>
+  <strong>Meaning:</strong>
+  <%= @example.meaning %>
+</p>
+
+<%= link_to 'Edit', edit_example_path(@example) %> |
+<%= link_to 'Back', examples_path %>

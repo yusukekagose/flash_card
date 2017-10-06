@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :examples
   resources :dictionaries do
     collection do
       delete 'destroy_multiple'
