@@ -1,7 +1,9 @@
 @import "bootstrap";
 @import "font-awesome";
 
-
+.circle-btn {
+ border-radius: 50%;
+}
 body {
   overflow-x: hidden;
 }

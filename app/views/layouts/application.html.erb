@@ -20,23 +20,25 @@
     </div>
 
   <section id="alphabet" class="row bg-light">
-  <div class="container ">
+  <div class="container py-2">
     <%
       ary = []
       ('a'..'z').each do |i|
         ary.push(i.to_s)
-    end %>
+      end %>
     <% ary.each do |a| %>
-    <div class="float-left p-2">
+    <div class="float-left px-1">
+      <button type="button" class="btn btn-primary circle-btn">
       <%= a %>
+      </button>
     </div>
     <% end %>
   </div>
   </section>
+
   <%= render "shared/main_footer" %>
 
 
-  
 
 
   </body>
