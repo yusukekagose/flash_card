@@ -1,4 +1,22 @@
-<h1>Users#index</h1>
-<% @users.each do |user| %>
-  <%= user.nick_name %>
-<% end %>
+<div class="container">
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <% @users.each do |user| %>
+  <tr>
+    <td scope="row"><%= user.id %></td>
+    <td><%= user.nick_name %></td>
+    <td>jdoe@gmail.com</td>
+  </tr>
+   <% end %>
+</tbody>
+</table>
+</div>
+

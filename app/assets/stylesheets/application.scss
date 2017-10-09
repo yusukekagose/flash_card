@@ -2,11 +2,16 @@
 @import "font-awesome";
 
 
-body{
-  
+body {
+  overflow-x: hidden;
 }
-.footer{
+
+#alphabet{
   margin-top: 400px
+}
+
+.footer{
+
 }
 .container-90 {
   width: 90%;

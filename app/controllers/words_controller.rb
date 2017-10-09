@@ -14,6 +14,7 @@ class WordsController < ApplicationController
   # GET /words/new
   def new
     @word = Word.new
+    @meaning = Meaning.new
   end
 
   # GET /words/1/edit
