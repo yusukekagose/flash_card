@@ -4,6 +4,10 @@
 .circle-btn {
  border-radius: 50%;
 }
+.circle-btn:hover{
+  width: 115%;
+  cursor: pointer;
+}
 body {
   overflow-x: hidden;
 }

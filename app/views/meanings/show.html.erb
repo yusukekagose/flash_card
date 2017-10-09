@@ -4,14 +4,30 @@
   <strong>Meaning:</strong>
   <%= @meaning.meaning %>
 </p>
+<table class="table table-hover">
+ <%= form_tag(create_multiple_dictionaries_path, method: 'post')  do  %>
+  <thead >
+    <tr>
+      <th>例文</th>
+      <th>意味</th>
+      <th colspan="3"></th>
+      <th><%= submit_tag "単語帳に追加", class: "btn btn-primary" %></th>
+    </tr>
+  </thead>
 
-<% @examples.each do |example| %>
-<div class="row mb-1">
-  <%= example.sentence %>
-  <%= example.translation %>
-  <%= link_to 'Edit', edit_example_path(example.id) %>
-</div>
+  <tbody>
+    <% @examples.each do |example| %>
+      <tr>
+        <td><%= example.sentence %></td>
+        <td><%= example.translation %></td>
+      </tr>
+    <% end %>
+  </tbody>
 <% end %>
+</table>
+
 
 <%= link_to 'Edit', edit_meaning_path(@meaning) %> |
 <%= link_to 'Back', meanings_path %>
+
+</div>
