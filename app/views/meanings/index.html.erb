@@ -5,7 +5,7 @@
 <h1>Meanings</h1>
 
 <table class="table table-hover">
- <%= form_tag(create_multiple_dictionaries_path, method: 'post')  do  %>
+ <%= simple_form_for(@dictionary) do |f|  %>
   <thead >
     <tr>
       <th>#</th>
@@ -15,11 +15,12 @@
       <th>品詞</th>
       <th>例文</th>
       <th>例文一覧</th>
+      <th>例文作成</th>
       <th>toeic</th>
       <th>英検</th>
       <th>edit</th>
       <th colspan="3"></th>
-      <th><%= submit_tag "単語帳に追加", class: "btn btn-primary" %></th>
+      <th><%= f.submit '登録', :class => 'btn btn-primary'  %></th>
     </tr>
   </thead>
 
@@ -39,12 +40,13 @@
         </td>
         <td><%= link_to "一覧", meaning_path(meaning.id) , class: "btn-sm btn-primary" %></td>
         <td><%= meaning.toeic %></td>
+        <td><%= meaning.toeic %></td>
         <td><%= meaning.eiken %></td>
         <td><%= meaning.toeic %></td>
         <td><%= link_to 'Show',meaning_path(meaning.id) %></td>
         <td><%= link_to 'Edit', edit_meaning_path(meaning.id) %></td>
         <td><%= link_to 'Destroy', meaning_path(meaning), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-         <td><%= check_box_tag 'dictionary[meaning_id][]', meaning.id %></td>
+         <td><%= f.input :meaning_id,collection: @meanings.ids %></td>
       </tr>
     <% end %>
   </tbody>

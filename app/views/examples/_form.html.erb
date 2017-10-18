@@ -1,32 +1,19 @@
-<%= form_with(model: example, local: true) do |form| %>
-  <% if example.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(example.errors.count, "error") %> prohibited this example from being saved:</h2>
-
-      <ul>
-      <% example.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :sentence %>
-    <%= form.text_area :sentence, id: :example_sentence %>
+<form>
+<%=  simple_form_for(object) do |f| %>
+  <div class="form-group">
+    <%= f.input :sentence, label: "英文を入力してください",html: { class: 'form-control' } %>
   </div>
 
-  <div class="field">
-    <%= form.label :translation %>
-    <%= form.text_area :translation, id: :example_translation %>
+  <div class="form-group">
+    <%= f.input :translation,label: "翻訳した日本語を入力してください", html: { class: 'form-control' } %>
   </div>
 
-  <div class="field">
-    <%= form.label :meaning_id %>
-    <%= form.text_field :meaning_id, id: :example_meaning_id %>
+  <div class="form-group">
+    <%= f.input :meaning_id %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= f.submit "送信", class: "btn btn-primary"  %>
   </div>
 <% end %>
+</form>

@@ -9,7 +9,7 @@ class MeaningsController < ApplicationController
 
   # GET /meanings
   def index
-    @meanings = Meaning.eager_load(:word).order("words.id")
+    @meanings = Meaning.all
     @words = Word.all
     @dictionary = Dictionary.new
   end

@@ -17,7 +17,7 @@ class DictionariesController < ApplicationController
 
 
   def destroy
-    @dictionary .destroy
+    @dictionary.destroy
     redirect_to root_path, notice: 'Meaning was successfully destroyed.'
   end
 
