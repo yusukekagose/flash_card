@@ -5,8 +5,8 @@
 
 
 <div class="col-md-2 " id="sidebar">
-    <div class="list-group  card text-md-left">
-    <a href="#menu1" class="list-group-item list-group-item-action d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-dashboard"></i> <span class="d-none d-md-inline">LEVEL</span> </a>
+    <div class="list-group  text-md-left">
+    <a href="#menu1" class="list-group-item list-group-item-action d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-dashboard"></i> <span class="d-none d-md-inline">LEVEL</span><span class="badge badge-secondary ml-2 align-center"><%= Word.count %></span></a>
     <div class="collapse text-center" id="menu1">
         <% @level.each.with_index(1) do |level,i| %>
         <a href="#menuSub<%= i %>" class="list-group-item list-group-item-action" data-toggle="collapse" aria-expanded="false"><%= level %></a>
@@ -17,7 +17,7 @@
         </div>
         <% end %>
     </div>
-    <a href="#menu2" class="list-group-item  list-group-item-action d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-book"></i> <span class="d-none d-md-inline">TOEIC</span></a>
+    <a href="#menu2" class="list-group-item  list-group-item-action d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-book"></i> <span class="d-none d-md-inline">TOEIC</span><span class="badge badge-secondary ml-2 align-center">3</span></a>
     <div class="collapse" id="menu2">
     <% @toeics.each do |toeic| %>
         <a href="#" class="list-group-item list-group-item-action" data-parent="#menu2"><%= toeic %></a>
