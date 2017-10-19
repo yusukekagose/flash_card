@@ -14,6 +14,7 @@
       <th>品詞</th>
       <th>例文</th>
       <th>例文一覧</th>
+      <th>例文を作る</th>
       <th colspan="3"></th>
       <th><%= submit_tag "単語帳に追加", class: "btn btn-primary" %></th>
     </tr>
@@ -34,6 +35,7 @@
         <% end %>
         </td>
         <td><%= link_to "一覧", meaning_path(meaning.id) , class: "btn-sm btn-primary" %></td>
+        <td><%= link_to "例文作る" , meaning_path(meaning.id), class: "btn-sm btn-warning text-white" %></td>
         <td><%= meaning.toeic %></td>
         <td><%= meaning.eiken %></td>
         <td><%= meaning.toeic %></td>
