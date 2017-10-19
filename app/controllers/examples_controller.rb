@@ -14,6 +14,7 @@ class ExamplesController < ApplicationController
   # GET /examples/new
   def new
     @example = Example.new
+    @meaning = Meaning.find(params[:meaning_id])
   end
 
   # GET /examples/1/edit
@@ -25,9 +26,9 @@ class ExamplesController < ApplicationController
     @example = Example.new(example_params)
 
     if @example.save
-      redirect_to @example, notice: 'Example was successfully created.'
+      redirect_to root_path, notice: 'Example was successfully created.'
     else
-      render :new
+      render :index
     end
   end
 

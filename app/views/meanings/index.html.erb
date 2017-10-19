@@ -38,11 +38,11 @@
         <%= meaning_example.translation %><br>
         <% end %>
         </td>
-        <td><%= link_to "一覧", meaning_path(meaning.id) , class: "btn-sm btn-primary" %></td>
+        <td><%= link_to "一覧", meaning_examples_meaning_path(meaning.id) , class: "btn-sm btn-primary" %></td>
         <td><%= meaning.toeic %></td>
         <td><%= meaning.toeic %></td>
         <td><%= meaning.eiken %></td>
-        <td><%= meaning.toeic %></td>
+        <td><%= link_to "例文作る" , meaning_path(meaning.id) %></td>
         <td><%= link_to 'Show',meaning_path(meaning.id) %></td>
         <td><%= link_to 'Edit', edit_meaning_path(meaning.id) %></td>
         <td><%= link_to 'Destroy', meaning_path(meaning), method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -56,3 +56,4 @@
 
 <%= link_to 'New Meaning', new_meaning_path %>
 </div>
+

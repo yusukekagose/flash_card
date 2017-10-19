@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :examples
   resources :dictionaries do
     collection do
       delete 'destroy_multiple'
@@ -7,9 +6,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :meanings
+  resources :meanings do
+    member do
+      get 'meaning_examples'
+    end
+  end
 
-  resources :dictionaries, only:[:new,:create,:destroy] 
+  resources :examples
+
+  resources :dictionaries, only:[:new,:create,:destroy]
 
   resources :users, only: [:show,:index] do
     collection do
