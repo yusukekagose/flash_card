@@ -2,27 +2,31 @@
  <%= simple_form_for(@dictionary) do |f|  %>
   <thead>
     <tr>
+      <% if current_user.has_roles?(:admin) %>
       <th>#</th>
       <th>#</th>
+      <% end %>
       <th>英語</th>
       <th>意味</th>
       <th>品詞</th>
       <th>例文</th>
       <th>例文一覧</th>
       <th>例文作成</th>
+      <% if current_user.has_roles?(:admin) %>
       <th>toeic</th>
       <th>英検</th>
-      <th>edit</th>
-      <th colspan="3"></th>
-      <th><%= f.submit '登録', :class => 'btn btn-primary'  %></th>
+       <% end %>
+      <th><%= f.submit '単語帳に追加', :class => 'btn btn-primary'  %></th>
     </tr>
   </thead>
 
   <tbody>
     <% @meanings.each do |meaning| %>
       <tr>
+        <% if current_user.has_roles?(:admin) %>
       　<td><%= meaning.word.id %></td>
         <td><%= meaning.id %></td>
+        <% end %>
         <td><%= meaning.word.english_word %></td>
         <td><%= meaning.meaning %></td>
         <td><%= meaning.parse %></td>
@@ -34,13 +38,15 @@
         </td>
         <td><%= link_to "一覧", meaning_examples_meaning_path(meaning.id) , class: "btn-sm btn-primary" %></td>
         <td><%= link_to "例文作る" , meaning_path(meaning.id), class: "btn-sm btn-warning text-white" %></td>
+        <% if current_user.has_roles?(:admin) %>
         <td><%= meaning.toeic %></td>
         <td><%= meaning.toeic %></td>
         <td><%= meaning.eiken %></td>
         <td><%= link_to 'Show',meaning_path(meaning.id) %></td>
         <td><%= link_to 'Edit', edit_meaning_path(meaning.id) %></td>
         <td><%= link_to 'Destroy', meaning_path(meaning), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-         <td><%= f.input :meaning_id,collection: @meanings.ids %></td>
+        <% end %>
+         <td><%= f.check_box :meaning_id,collection: @meanings.ids %></td>
       </tr>
     <% end %>
   </tbody>
