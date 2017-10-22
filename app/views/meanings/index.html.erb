@@ -4,56 +4,6 @@
 <div class="container-90 mx-auto">
 <h1>Meanings</h1>
 
-<table class="table table-hover">
- <%= simple_form_for(@dictionary) do |f|  %>
-  <thead >
-    <tr>
-      <th>#</th>
-      <th>#</th>
-      <th>英語</th>
-      <th>意味</th>
-      <th>品詞</th>
-      <th>例文</th>
-      <th>例文一覧</th>
-      <th>例文作成</th>
-      <th>toeic</th>
-      <th>英検</th>
-      <th>edit</th>
-      <th colspan="3"></th>
-      <th><%= f.submit '登録', :class => 'btn btn-primary'  %></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @meanings.each do |meaning| %>
-      <tr>
-      　<td><%= meaning.word.id %></td>
-        <td><%= meaning.id %></td>
-        <td><%= meaning.word.english_word %></td>
-        <td><%= meaning.meaning %></td>
-        <td><%= meaning.parse %></td>
-        <td>
-        <% meaning.examples.first(1).each do |meaning_example| %>
-        <%= meaning_example.sentence %><br>
-        <%= meaning_example.translation %><br>
-        <% end %>
-        </td>
-        <td><%= link_to "一覧", meaning_examples_meaning_path(meaning.id) , class: "btn-sm btn-primary" %></td>
-        <td><%= link_to "例文作る" , meaning_path(meaning.id), class: "btn-sm btn-warning text-white" %></td>
-        <td><%= meaning.toeic %></td>
-        <td><%= meaning.toeic %></td>
-        <td><%= meaning.eiken %></td>
-        <td><%= link_to 'Show',meaning_path(meaning.id) %></td>
-        <td><%= link_to 'Edit', edit_meaning_path(meaning.id) %></td>
-        <td><%= link_to 'Destroy', meaning_path(meaning), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-         <td><%= f.input :meaning_id,collection: @meanings.ids %></td>
-      </tr>
-    <% end %>
-  </tbody>
-<% end %>
-</table>
-
-
-<%= link_to 'New Meaning', new_meaning_path %>
+<%= render "shared/table"%>
 </div>
 

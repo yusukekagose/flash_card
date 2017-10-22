@@ -1,8 +1,10 @@
 @import "bootstrap";
 @import "font-awesome";
-
+.borderless{
+  border-top:none;
+}
 .fa-chevron-down{
-  position:relative;
+  position:relative  !important;
   left:10px;
   top:-5px;
   font-size:5px;
@@ -19,7 +21,6 @@
   border-bottom-right-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
 }
-
 .circle-btn {
  border-radius: 50%;
 }
