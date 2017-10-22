@@ -1,6 +1,15 @@
 @import "bootstrap";
 @import "font-awesome";
 
+.fa-chevron-down{
+  position:relative;
+  left:10px;
+  top:-5px;
+  font-size:5px;
+}
+.top-none{
+  border-top: 0px none !important;
+}
 .special .list-group-item:first-child {
    border-top-right-radius: 0px !important;
    border-top-left-radius: 0px !important;
