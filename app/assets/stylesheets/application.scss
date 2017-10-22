@@ -1,6 +1,16 @@
 @import "bootstrap";
 @import "font-awesome";
 
+.special .list-group-item:first-child {
+   border-top-right-radius: 0px !important;
+   border-top-left-radius: 0px !important;
+}
+
+.special .list-group-item:last-child {
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
 .circle-btn {
  border-radius: 50%;
 }
