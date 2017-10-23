@@ -1,5 +1,5 @@
 class MeaningsController < ApplicationController
-  before_action :set_meaning, only: [:show, :edit, :update, :destroy, :meaning_examples]
+  before_action :set_meaning, only: [:show, :edit, :update, :destroy, :meaning_examples,:create_meaning]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
 
 
@@ -12,6 +12,11 @@ class MeaningsController < ApplicationController
 
   # GET /meanings/1
   def show
+    @examples = @meaning.examples
+    @example = Example.new
+  end
+
+  def make_examples
     @examples = @meaning.examples
     @example = Example.new
   end

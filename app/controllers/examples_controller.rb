@@ -28,7 +28,7 @@ class ExamplesController < ApplicationController
     if @example.save
       redirect_to root_path, notice: 'Example was successfully created.'
     else
-      render :index
+      redirect_to root_path
     end
   end
 

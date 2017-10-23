@@ -6,13 +6,14 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :examples, only:[:create,:destroy]
+
   resources :meanings do
+    resources :examples, only:[:new]
     member do
       get 'meaning_examples'
     end
   end
-
-  resources :examples
 
   resources :dictionaries, only:[:new,:create,:destroy]
 

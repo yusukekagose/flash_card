@@ -1,9 +1,4 @@
-<p id="notice"><%= notice %></p>
 <div class="container">
-  <%= @meaning.word.english_word %>
-  <%= @meaning.meaning %>
-  <%= @meaning.parse %>
-
 <%=  simple_form_for @example ,url: examples_path, method: :post  do |f| %>
 <form>
   <div class="form-group">
