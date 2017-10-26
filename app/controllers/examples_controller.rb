@@ -1,6 +1,7 @@
 class ExamplesController < ApplicationController
   before_action :set_example, only: [:show, :edit, :update, :destroy]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
+  before_action :set_meaning, only: [:new, :create]
 
   # GET /examples
   def index
@@ -14,7 +15,6 @@ class ExamplesController < ApplicationController
   # GET /examples/new
   def new
     @example = Example.new
-    @meaning = Meaning.find(params[:meaning_id])
   end
 
   # GET /examples/1/edit
@@ -24,6 +24,7 @@ class ExamplesController < ApplicationController
   # POST /examples
   def create
     @example = Example.new(example_params)
+    @example.meaning_id = @meaning.id
 
     if @example.save
       redirect_to root_path, notice: 'Example was successfully created.'
@@ -51,6 +52,10 @@ class ExamplesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_example
       @example = Example.find(params[:id])
+    end
+
+    def set_meaning
+      @meaning = Meaning.find(params[:meaning_id])
     end
 
     # Only allow a trusted parameter "white list" through.

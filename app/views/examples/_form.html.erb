@@ -4,7 +4,7 @@
   <%= @meaning.meaning %>
   <%= @meaning.parse %>
 
-<%=  simple_form_for @example ,url: examples_path, method: :post  do |f| %>
+<%=  simple_form_for @example ,url: meaning_examples_path, method: :post  do |f| %>
 <form>
   <div class="form-group">
     <%= f.input :sentence, label: "英文を入力してください",html: { class: 'form-control' } %>
@@ -14,9 +14,6 @@
     <%= f.input :translation,label: "翻訳した日本語を入力してください", html: { class: 'form-control' } %>
   </div>
 
-  <div class="form-group">
-    <%= f.input :meaning_id, as: :hidden,input_html: { value: @meaning.id } %>
-  </div>
 
   <div class="form-group">
     <%= f.submit "送信", class: "btn btn-primary"  %>
