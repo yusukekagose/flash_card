@@ -12,6 +12,7 @@
       <th>例文</th>
       <th>例文一覧</th>
       <th>例文作成</th>
+      <th>追加</th>
       <% if current_user.has_roles?(:admin) %>
       <th>toeic</th>
       <th>英検</th>
@@ -40,10 +41,19 @@
         <td>
           <%= example_creation_button_toggle_helper meaning %>
         </td>
+
+        <%= simple_form_for(@dictionary) do |f|  %>
+        <td>
+          <%= f.input :meaning_id, :as => :hidden, :input_html => { :value => meaning.id } %>
+          <%= button_tag(type: 'submit', class: "btn btn-link") do %><i class="fa fa-book" aria-hidden="true"></i><% end %>
+        </td>
+        <% end %>
+
         <% if current_user.has_roles?(:admin) %>
         <td><%= meaning.toeic %></td>
         <td><%= meaning.toeic %></td>
         <td><%= meaning.eiken %></td>
+
         <td><%= link_to 'Show',meaning_path(meaning.id) %></td>
         <td><%= link_to 'Edit', edit_meaning_path(meaning.id) %></td>
         <td><%= link_to 'Destroy', meaning_path(meaning), method: :delete, data: { confirm: 'Are you sure?' } %></td>

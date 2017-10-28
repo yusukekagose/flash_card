@@ -11,7 +11,7 @@ class DictionariesController < ApplicationController
     if @dictionary.save
       redirect_to meanings_path, notice: 'Dicionary was successfully created.'
     else
-      render :new
+      redirect_to :back
     end
   end
 
@@ -32,7 +32,7 @@ class DictionariesController < ApplicationController
     if @dictionary.save
       redirect_to meanings_path, notice: 'Dicionary was successfully created.'
     else
-      redirect_to meanings_path
+      redirect_to root_path
     end
   end
 
@@ -43,6 +43,6 @@ class DictionariesController < ApplicationController
   end
 
   def dictionary_params
-    params.require(:dictionary).permit(meaning_id:[]).merge(user_id: current_user.id)
+    params.require(:dictionary).permit(:meaning_id).merge(user_id: current_user.id)
   end
 end
