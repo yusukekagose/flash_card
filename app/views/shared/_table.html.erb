@@ -37,7 +37,9 @@
         <% end %>
         </td>
         <td><%= link_to "一覧", meaning_examples_meaning_path(meaning.id) , class: "btn-sm btn-primary" %></td>
-        <td><%= link_to "例文作る" , new_meaning_example_path(meaning.id), class: "btn-sm btn-warning text-white" %></td>
+        <td>
+          <%= example_creation_button_toggle_helper meaning %>
+        </td>
         <% if current_user.has_roles?(:admin) %>
         <td><%= meaning.toeic %></td>
         <td><%= meaning.toeic %></td>
