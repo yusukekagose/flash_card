@@ -12,7 +12,7 @@
       <th>例文</th>
       <th>例文一覧</th>
       <th>例文作成</th>
-      <th>追加</th>
+      <th></th>
       <% if current_user.has_roles?(:admin) %>
       <th>toeic</th>
       <th>英検</th>
@@ -41,12 +41,13 @@
         <td>
           <%= example_creation_button_toggle_helper meaning %>
         </td>
-
+        <% unless current_user.is_a?(GuestUser) %>
         <%= simple_form_for(@dictionary) do |f|  %>
         <td>
           <%= f.input :meaning_id, :as => :hidden, :input_html => { :value => meaning.id } %>
-          <%= button_tag(type: 'submit', class: "btn btn-link") do %><i class="fa fa-book" aria-hidden="true"></i><% end %>
+          <%= button_tag(type: 'submit', class: "btn btn-link") do %><i class="fa fa-book" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="単語帳に追加"></i><% end %>
         </td>
+        <% end %>
         <% end %>
 
         <% if current_user.has_roles?(:admin) %>

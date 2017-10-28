@@ -29,7 +29,7 @@ class ExamplesController < ApplicationController
     if @example.save
       redirect_to root_path, notice: 'Example was successfully created.'
     else
-      redirect_to root_path
+      redirect_to request.referrer
     end
   end
 

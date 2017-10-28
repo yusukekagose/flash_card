@@ -11,7 +11,7 @@ class DictionariesController < ApplicationController
     if @dictionary.save
       redirect_to meanings_path, notice: 'Dicionary was successfully created.'
     else
-      redirect_to :back
+      redirect_to request.referrer, alert: 'Dicionary aleready exists.'
     end
   end
 
