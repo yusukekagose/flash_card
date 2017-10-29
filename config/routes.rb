@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :likes, only: [:destroy,:create,:index]
+
   resources :dictionaries do
     collection do
       delete 'destroy_multiple'

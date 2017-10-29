@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171006013254) do
+ActiveRecord::Schema.define(version: 20171029050304) do
 
   create_table "dictionaries", force: :cascade do |t|
     t.integer "user_id"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20171006013254) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["meaning_id"], name: "index_examples_on_meaning_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "example_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["example_id"], name: "index_likes_on_example_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "meanings", force: :cascade do |t|

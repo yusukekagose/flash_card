@@ -3,5 +3,6 @@ class HomeController < ApplicationController
   def index
     @meanings = Meaning.all
     @dictionary = Dictionary.new
+    @like = Like.new
   end
 end

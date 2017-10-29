@@ -59,6 +59,7 @@ class MeaningsController < ApplicationController
   def meaning_examples
     @example = Example.new
     @examples = @meaning.examples
+    @like = Like.new
   end
 
   private

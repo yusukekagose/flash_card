@@ -19,6 +19,16 @@
       <tr>
         <td><%= example.sentence %></td>
         <td><%= example.translation %></td>
+
+        <%= simple_form_for(@like) do |f|  %>
+        <td>
+          <%= f.input :example_id, :as => :hidden, :input_html => { :value => example.id } %>
+          <%= button_tag(type: 'submit', class: "btn btn-link") do %><i class="fa fa-thumbs-up" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="ナイス"></i><% end %>
+        </td>
+        <% end %>
+        <td><%= Like.where(example_id: example.id).count %></td>
+
+
       </tr>
     <% end %>
   </tbody>
