@@ -24,6 +24,7 @@ class MeaningsController < ApplicationController
   # GET /meanings/new
   def new
     @meaning = Meaning.new
+    @word = Word.find(params[:word_id])
   end
 
   # GET /meanings/1/edit
@@ -33,7 +34,8 @@ class MeaningsController < ApplicationController
   # POST /meanings
   def create
     @meaning = Meaning.new(meaning_params)
-
+    @word = Word.find(params[:word_id])
+    @meaning.word_id = @word.id
     if @meaning.save
       redirect_to root_path, notice: 'Meaning was successfully created.'
     else

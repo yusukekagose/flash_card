@@ -8,9 +8,11 @@ Rails.application.routes.draw do
       post 'create_multiple'
     end
   end
+  resources :words do
+    resources :meanings, only:[:new, :create]
+  end
 
-
-  resources :meanings do
+  resources :meanings, only:[:index,:destroy]  do
     resources :examples, only:[:new,:create,:destroy]
     member do
       get 'meaning_examples'
@@ -26,7 +28,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :words
+
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   root 'home#index'
 

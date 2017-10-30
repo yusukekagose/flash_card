@@ -6,9 +6,36 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-100.times do |word|
-    Word.create!(english_word: "word#{word}")
-  end
 
-puts "word was created"
+#100.times do |word|
+    #Word.create!(english_word: "word#{word}")
+#end
+
+#puts "word was created"
+
+#100.times do |word|
+    #Meaning.create!(word_id: word+=1,
+                    #meaning: "meaning#{word}",
+                    #parse: "意味#{word}",
+                    #)
+#end
+
+#puts "word was created"
+
+
+Word.create!(english_word: "you")
+Word.create!(english_word: "they")
+Word.create!(english_word: "not")
+Word.create!(english_word: "her")
+Word.create!(english_word: "go")
+Word.create!(english_word: "as")
+Word.create!(english_word: "think")
+Word.create!(english_word: "take")
+Word.create!(english_word: "come")
+Word.create!(english_word: "then")
+Word.create!(english_word: "way")
+Word.create!(english_word: "more")
+Word.create!(english_word: "give")
+Word.create!(english_word: "very")
+Word.create!(english_word: "through")
 
