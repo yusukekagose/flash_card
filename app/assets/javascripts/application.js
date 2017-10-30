@@ -21,3 +21,8 @@
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
+
+
+$( function() {
+    $( "#accordion" ).click();
+  } );

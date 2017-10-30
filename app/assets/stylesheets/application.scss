@@ -1,16 +1,41 @@
 @import "bootstrap";
 @import "font-awesome";
 
-.fa{
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar-brand{
+  letter-spacing: 15px;
+}
+.fa-times{
+  margin-right:7px;
+  color: blue;
+}
+.filter{
+  float:right;
+}
+.fa-book{
   position:relative  !important;
   top:-20px;
   font-size:20px;
 }
-.fa-thumbs-up{
+.btn-link{
+  .fa-thumbs-up{
   position:relative  !important;
   top:-25px;
   font-size:20px;
+  color:gray;
+  }
 }
+
+.thumbs-uped{
+  font-size:20px;
+  transform: translate(12px, 0);
+  color:#0069d9;
+}
+
 .site-name {
       color: black;
       font-size: 30px;

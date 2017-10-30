@@ -33,7 +33,7 @@
         <td><%= meaning.parse %></td>
         <td>
         <% meaning.examples.first(1).each do |meaning_example| %>
-        <%= meaning_example.sentence %><br>
+        <%= meaning_example.sentence.capitalize  %><br>
         <%= meaning_example.translation %><br>
         <% end %>
         </td>
@@ -57,7 +57,7 @@
 
         <td><%= link_to 'Show',meaning_path(meaning.id) %></td>
         <td><%= link_to 'Edit', edit_meaning_path(meaning.id) %></td>
-        <td><%= link_to 'Destroy', meaning_path(meaning), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', meaning_path(meaning.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
          <td><%= f.check_box :meaning_id,collection: @meanings.ids %></td>
       </tr>

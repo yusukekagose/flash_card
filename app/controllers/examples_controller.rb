@@ -60,6 +60,6 @@ class ExamplesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def example_params
-      params.require(:example).permit(:sentence, :translation, :meaning_id)
+      params.require(:example).permit(:sentence, :translation, :meaning_id).merge(user_id: current_user.id)
     end
 end

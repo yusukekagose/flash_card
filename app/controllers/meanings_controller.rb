@@ -35,7 +35,7 @@ class MeaningsController < ApplicationController
     @meaning = Meaning.new(meaning_params)
 
     if @meaning.save
-      redirect_to @meaning, notice: 'Meaning was successfully created.'
+      redirect_to root_path, notice: 'Meaning was successfully created.'
     else
       render :new
     end

@@ -21,12 +21,17 @@
         <td><%= example.translation %></td>
 
         <%= simple_form_for(@like) do |f|  %>
+        <% if Like.where(example_id: example.id).exists? %>
+        <td><i class="fa fa-thumbs-up thumbs-uped" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="いいね済み">
+        <%= Like.where(example_id: example.id).count %>
+        </td>
+        <% else %>
         <td>
-          <%= f.input :example_id, :as => :hidden, :input_html => { :value => example.id } %>
+          <%= f.input :example_id, :as => :hidden, :input_html => { :value => example.id, style: "display:none;" } %>
           <%= button_tag(type: 'submit', class: "btn btn-link") do %><i class="fa fa-thumbs-up" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="ナイス"></i><% end %>
         </td>
         <% end %>
-        <td><%= Like.where(example_id: example.id).count %></td>
+        <% end %>
 
 
       </tr>
