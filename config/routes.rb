@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :meanings, only:[:new, :create]
   end
 
-  resources :meanings, only:[:index,:destroy]  do
+  resources :meanings, except:[:new, :create]  do
     resources :examples, only:[:new,:create,:destroy]
     member do
       get 'meaning_examples'

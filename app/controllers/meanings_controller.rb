@@ -46,7 +46,7 @@ class MeaningsController < ApplicationController
   # PATCH/PUT /meanings/1
   def update
     if @meaning.update(meaning_params)
-      redirect_to @meaning, notice: 'Meaning was successfully updated.'
+      redirect_to root_path, notice: 'Meaning was successfully updated.'
     else
       render :edit
     end

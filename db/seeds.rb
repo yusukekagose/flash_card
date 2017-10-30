@@ -21,7 +21,12 @@
 #end
 
 #puts "word was created"
-
+User.create(
+            email: "admin@test.com",
+            password: "asdfasdf",
+            password_confirmation: "asdfasdf",
+            nick_name: "Admin",
+            roles: "admin")
 
 Word.create!(english_word: "you")
 Word.create!(english_word: "they")

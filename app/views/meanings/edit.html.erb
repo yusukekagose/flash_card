@@ -1,6 +1,32 @@
 <h1>Editing Meaning</h1>
 
-<%= render 'form', meaning: @meaning %>
+<div class="container">
+<%=  simple_form_for @meaning ,url: meaning_path, method: :patch  do |f| %>
+  <p id="notice"><%= notice %></p>
+　<%= @meaning.word.english_word %>
+
+  <div class="field">
+    <%= f.input :meaning %>
+  </div>
+  <div class="field">
+    <%= f.input :parse %>
+  </div>
+  <div class="field">
+    <%= f.input :level %>
+  </div>
+
+  <div class="field">
+    <%= f.input :eiken %>
+  </div>
+  <div class="field">
+    <%= f.input :toeic %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>
 
 <%= link_to 'Show', @meaning %> |
 <%= link_to 'Back', meanings_path %>
