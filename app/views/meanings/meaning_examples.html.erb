@@ -5,7 +5,6 @@
   <%= @meaning.meaning %>
 </p>
 <table class="table table-hover">
- <%= form_tag(create_multiple_dictionaries_path, method: 'post')  do  %>
   <thead >
     <tr>
       <th>例文</th>
@@ -21,7 +20,7 @@
         <td><%= example.translation %></td>
 
         <%= simple_form_for(@like) do |f|  %>
-        <% if Like.where(example_id: example.id).exists? %>
+        <% if example.likes.where(user_id: current_user.id).exists? %>
         <td><i class="fa fa-thumbs-up thumbs-uped" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="いいね済み">
         <%= Like.where(example_id: example.id).count %>
         </td>
@@ -29,6 +28,7 @@
         <td>
           <%= f.input :example_id, :as => :hidden, :input_html => { :value => example.id, style: "display:none;" } %>
           <%= button_tag(type: 'submit', class: "btn btn-link") do %><i class="fa fa-thumbs-up" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="ナイス"></i><% end %>
+          <span class="like-count"><%= Like.where(example_id: example.id).count %></span>
         </td>
         <% end %>
         <% end %>
@@ -37,7 +37,6 @@
       </tr>
     <% end %>
   </tbody>
-<% end %>
 </table>
 
 

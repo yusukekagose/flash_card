@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :rankings, only: [:index]
+
   resources :likes, only: [:destroy,:create,:index]
 
   resources :dictionaries do
@@ -12,7 +14,7 @@ Rails.application.routes.draw do
     resources :meanings, only:[:new, :create]
   end
 
-  resources :meanings, except:[:new, :create]  do
+  resources :meanings, except:[:new, :create,:show]  do
     resources :examples, only:[:new,:create,:destroy]
     member do
       get 'meaning_examples'

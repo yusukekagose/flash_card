@@ -13,6 +13,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates_presence_of :nick_name
+  has_many :examples
 
   has_many :dictionaries
 

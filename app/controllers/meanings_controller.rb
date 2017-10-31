@@ -11,10 +11,6 @@ class MeaningsController < ApplicationController
   end
 
   # GET /meanings/1
-  def show
-    @examples = @meaning.examples
-    @example = Example.new
-  end
 
   def make_examples
     @examples = @meaning.examples
