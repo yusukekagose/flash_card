@@ -1,5 +1,28 @@
 <div class="container">
-<% @user_create_example_ranking.each.with_index(1) do |user, i| %>
-  <span><%= i %>位</span><span><%= user.nick_name %></span><span>投稿数<%= user.examples.size %></span>
-<% end %>
+  <div class="row ranking-header">
+    <div class="col-md-4 text-center rankin-index-header"><h3>POST</h3></div>
+    <div class="col-md-4 text-center"><h3>LIKE</h3></div>
+    <div class="col-md-4 text-center"><h3>COMING</h3></div>
+  </div>
+  <div id="ranking-tabel">
+    <table class="zebra">
+      <thead>
+        <tr>
+          <th>RANKING</th>
+          <th>NICKNAME</th>
+          <th>POSTS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @user_create_example_ranking.each.with_index(1) do |user, i| %>
+        <tr>
+          <td><%= i %></d>
+          <td><%= user.nick_name %></td>
+          <td><%= user.examples.size %>POSTS</td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
 </div>

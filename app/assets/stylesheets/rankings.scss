@@ -1,3 +1,67 @@
 // Place all the styles related to the Rankings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+@import "font-awesome";
+
+/*rankin-index*/
+#ranking-tabel{
+  /* ranking table*/
+  table {
+    width: 90%;
+    margin: 2rem auto
+  }
+  thead tr th:first-child,
+  tbody tr td:first-child{
+    width: 20%;
+  }
+  thead tr th:nth-child(2),
+  tbody tr td:nth-child(2){
+    width: 50%;
+  }
+  thead tr th:nth-child(3),
+  tbody tr td:nth-child(3){
+    width: 30%;
+  }
+  thead tr th:first-child{
+    padding-left:2rem
+  }
+  thead{
+    background: #fafbfb;
+    color: #aab1c2;
+    font-size: 1.2rem;
+    border-bottom: .1rem solid #dfe4ee;
+    font-weight: lighter !important;
+  }
+  thead tr th{
+    padding: 1rem 0;
+    font-weight: lighter !important;
+  }
+
+  tbody{
+    color: #5876a3;
+    font-size: 1.5rem;
+  }
+  tbody tr td{
+    padding: 1.1rem 0;
+  }
+  tbody tr:nth-child(even) {
+    background: #fafbfb;
+  }
+  tbody tr td:first-child{
+    padding-left:2rem
+  }
+/* ranking table*/
+}
+.ranking-header{
+  width: 90%;
+  margin: 2rem auto;
+  transform: translateX(5rem) !important;
+}
+.rankin-index-header {
+  padding-top: .5rem;
+  color: #0069d9;
+  width: 2rem;
+  border-bottom: 2px solid #0069d9;
+}
+
