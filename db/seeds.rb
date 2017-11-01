@@ -28,10 +28,16 @@ User.create(
             nick_name: "Admin",
             roles: "admin")
 
+word_id = 0
+d = "動"
+k = "形"
+kd = "形動"
 Word.create!(english_word: "you")
-Word.create!(english_word: "they")
+Meaning.create!(word_id: word_id += 1, meaning: "あなた", parse: d)
 Word.create!(english_word: "not")
+Meaning.create!(word_id: word_id += 1, meaning: "ではない", parse: k)
 Word.create!(english_word: "her")
+Meaning.create!(word_id: word_id += 1, meaning: "彼女の", parse: k)
 Word.create!(english_word: "go")
 Word.create!(english_word: "as")
 Word.create!(english_word: "think")

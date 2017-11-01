@@ -13,11 +13,11 @@
       <th>例文一覧</th>
       <th>例文作成</th>
       <th></th>
+      <th><%= f.submit '追加', :class => 'btn btn-primary'  %></th>
       <% if current_user.has_roles?(:admin) %>
       <th>toeic</th>
       <th>英検</th>
        <% end %>
-      <th><%= f.submit '単語帳に追加', :class => 'btn btn-primary'  %></th>
     </tr>
   </thead>
 
@@ -54,8 +54,6 @@
         <td><%= meaning.toeic %></td>
         <td><%= meaning.toeic %></td>
         <td><%= meaning.eiken %></td>
-
-        <td><%= link_to 'Show',meaning_path(meaning.id) %></td>
         <td><%= link_to 'Edit', edit_meaning_path(meaning.id) %></td>
         <td><%= link_to 'Destroy', meaning_path(meaning.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>

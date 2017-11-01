@@ -1,50 +1,79 @@
 @import "bootstrap";
 @import "font-awesome";
 
+html{
+  font-size: 92%;
+}
 *{
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
+}
+body{
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
   box-sizing: border-box;
 }
+
+.btn-original:link,
+.btn-original:visited{
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: .7rem 2rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+}
+
+.btn-original:hover {
+  transform: translateY(.05rem);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+}
+
+.btn-original:active{
+  transform: translateY(-.05);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+}
+
+
 .navbar-brand{
-  letter-spacing: 15px;
+  letter-spacing: 1.5rem;
 }
 .fa-times{
-  margin-right:7px;
+  margin-right:.7rem;
   color: blue;
 }
 .filter{
   float:right;
 }
 .fa-book{
-  position:relative  !important;
-  top:-20px;
-  font-size:20px;
+  font-size:1.5rem;
+  transform: translateY(-1.5rem);
 }
 .like-count{
   position:relative  !important;
-  top:-22px;
-  left:-11px;
-  font-size:20px;
+  top:-2.2rem;
+  left:-1.1rem;
+  font-size:2rem;
   color:gray;
 }
 .btn-link{
   .fa-thumbs-up{
-  transform: translate(0px, -25px);
-  font-size:20px;
+  transform: translate(0px, -2.5rem);
+  font-size:1.5rem;
   color:gray;
   }
 }
 
 .thumbs-uped{
-  font-size:20px;
-  transform: translate(12px, 0);
+  font-size:2rem;
+  transform: translate(1.2rem, 0);
   color:#0069d9;
 }
 
 .site-name {
       color: black;
-      font-size: 30px;
+      font-size: 3rem;
       font-weight: bold;
       font-family: Monospace;
     }
@@ -53,21 +82,21 @@
 }
 .fa-chevron-down{
   position:relative  !important;
-  left:10px;
-  top:-5px;
-  font-size:5px;
+  left:1rem;
+  top:-.5rem;
+  font-size:.5rem;
 }
 .top-none{
-  border-top: 0px none !important;
+  border-top: 0 none !important;
 }
 .special .list-group-item:first-child {
-   border-top-right-radius: 0px !important;
-   border-top-left-radius: 0px !important;
+   border-top-right-radius: 0 !important;
+   border-top-left-radius: 0 !important;
 }
 
 .special .list-group-item:last-child {
-  border-bottom-right-radius: 0px !important;
-  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }
 .circle-btn {
  border-radius: 50%;
@@ -81,7 +110,7 @@ body {
 }
 
 #alphabet{
-  margin-top: 400px
+  margin-top: 40rem
 }
 
 .footer{
@@ -92,10 +121,10 @@ body {
 }
 
 .nav-bar-items a{
-  margin: 0 10px;
+  margin: 0 1rem;
 }
 .devise-page-wrapper{
-  padding: 3em 4em;
+  padding: 3rem 4rem;
 }
 
 
