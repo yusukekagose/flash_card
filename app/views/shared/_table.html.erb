@@ -12,8 +12,10 @@
       <th>例文</th>
       <th>例文一覧</th>
       <th>例文作成</th>
+      <% unless current_user.is_a?(GuestUser) %>
       <th></th>
       <th><%= f.submit '追加', :class => 'btn btn-primary'  %></th>
+      <% end %>
       <% if current_user.has_roles?(:admin) %>
       <th>toeic</th>
       <th>英検</th>
@@ -44,11 +46,17 @@
         <% unless current_user.is_a?(GuestUser) %>
         <%= simple_form_for(@dictionary) do |f|  %>
         <td>
+          <%if Dictionary.where(user: current_user).where(meaning_id: meaning.id).present? %>
+          <i class="fa fa-book fa-book-existed" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="追加済み">
+          <% else %>
           <%= f.input :meaning_id, :as => :hidden, :input_html => { :value => meaning.id } %>
           <%= button_tag(type: 'submit', class: "btn btn-link") do %><i class="fa fa-book" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="単語帳に追加"></i><% end %>
+          <% end %>
         </td>
         <% end %>
         <% end %>
+
+        <td><%= f.check_box :meaning_id,collection: @meanings.ids, class:"tag-chack-box" %>
 
         <% if current_user.has_roles?(:admin) %>
         <td><%= meaning.toeic %></td>
@@ -57,7 +65,7 @@
         <td><%= link_to 'Edit', edit_meaning_path(meaning.id) %></td>
         <td><%= link_to 'Destroy', meaning_path(meaning.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
-         <td><%= f.check_box :meaning_id,collection: @meanings.ids %></td>
+         </td>
       </tr>
     <% end %>
   </tbody>

@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <div class="mx-auto container-90">
   <p>
   <strong>Meaning:</strong>
@@ -27,7 +26,8 @@
         <% else %>
         <td>
           <%= f.input :example_id, :as => :hidden, :input_html => { :value => example.id, style: "display:none;" } %>
-          <%= button_tag(type: 'submit', class: "btn btn-link") do %><i class="fa fa-thumbs-up" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="ナイス"></i><% end %>
+          <%= button_tag(type: 'submit', class: "btn btn-link btn-thums-up") do %><i class="fa fa-thumbs-up" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="ナイス"></i>
+          <% end %>
           <span class="like-count"><%= Like.where(example_id: example.id).count %></span>
         </td>
         <% end %>
