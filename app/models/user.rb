@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_many :examples
 
   has_many :dictionaries
+  has_many :likes
 
 
 
