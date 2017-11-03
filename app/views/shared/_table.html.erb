@@ -49,7 +49,7 @@
           <%if Dictionary.where(user: current_user).where(meaning_id: meaning.id).present? %>
           <i class="fa fa-book fa-book-existed" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="追加済み">
           <% else %>
-          <div><%= f.input :meaning_id, :as => :hidden, :input_html => { :value => meaning.id } %>
+          <div style="display: inline-block;"><%= f.input :meaning_id, :as => :hidden, :input_html => { :value => meaning.id } %>
           <%= button_tag(type: 'submit', class: "btn btn-link") do %><i class="fa fa-book" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="単語帳に追加"></i><% end %>
           <% end %></div>
         </td>

@@ -1,12 +1,21 @@
-
-<div class="container">
-  <div class="">
+<div class="meaning-example-form col-md-12">
+  <div class="container">
+  <div class="meaning-example">
+    <div class="meaning-example-new__panel">
     <%= @meaning.word.english_word %>
     <%= @meaning.meaning %>
     <%= @meaning.parse %>
   </div>
 
-  <div class="form-panel">
+  <div class="meaning-example-new__panel">
+    <p>他の例文を見る</p>
+    <% @meaning.examples.each do |meaning_example| %>
+      <%= meaning_example.sentence.capitalize  %><br>
+      <%= meaning_example.translation %><br>
+    <% end %>
+  </div>
+
+  <div class="meaning-example-new__panel form-panel">
     <%=  simple_form_for @example ,url: meaning_examples_path, method: :post  do |f| %>
     <form>
       <div class="form-group">
@@ -21,6 +30,8 @@
     </form>
     <% end %>
   </div>
+  </div>
 
 </div>
 
+</div>
