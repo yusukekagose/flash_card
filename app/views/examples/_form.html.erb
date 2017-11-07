@@ -17,17 +17,16 @@
 
   <div class="meaning-example-new__panel form-panel">
     <%=  simple_form_for @example ,url: meaning_examples_path, method: :post  do |f| %>
-    <form>
       <div class="form-group">
-        <%= f.input :sentence, label: "英文を入力してください",html: { class: 'form-control' } %>
+        <%= f.input :sentence, label: "英文を入力してください (先頭を大文字にする必要はない)", placeholder: '(例) You are cute',input_html: { class: 'form_input' } %>
+      </div>
+      <div class="">
+        <%= f.input :translation,label: "翻訳", placeholder: '(例) あなたは可愛い',input_html: { class: 'form_input' } %>
       </div>
       <div class="form-group">
-        <%= f.input :translation,label: "翻訳", html: { class: 'form-control' } %>
+        <%= f.submit "送信", class: "btn btn-primary btn-original"  %>
       </div>
-      <div class="form-group">
-        <%= f.submit "送信", class: "btn btn-primary"  %>
-      </div>
-    </form>
+
     <% end %>
   </div>
   </div>

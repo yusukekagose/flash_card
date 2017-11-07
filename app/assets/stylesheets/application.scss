@@ -17,6 +17,31 @@
 @import "bootstrap";
 @import "font-awesome";
 
+// COLORS
+$color-primary: #007bff;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7730;
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-white: #fff;
+$color-black: #000;
+
+
+// FONT
+$default-font-size: 1.6rem;
+
 
 html{
   font-size: 92%;
@@ -30,6 +55,7 @@ body{
   font-family: "Lato", sans-serif;
   font-weight: 400;
   box-sizing: border-box;
+  color: $color-grey-dark;
 }
 .tag-chack-box{
   transform: translateX(1.2rem) !important;
@@ -62,7 +88,6 @@ body{
 /* nav var items btn*/
 
 #site-nav-brand{
-  letter-spacing: 0.7rem;
   font-size: 2rem !important;
   font-weight: 900 !important;
 }
@@ -159,6 +184,21 @@ body {
 
 
 
+.fa-times{
+  margin-left: 1rem
+}
+
+.form_input {
+  border-radius: 2px;
+  background-color: rgba($color-white, .5);
+  border: none;
+  border-bottom: 3px solid $color-grey-dark;
+  font-size: 1.2rem;
+
+  &:focus {
+    border-bottom: 3px solid $color-primary;
+  }
+}
 
 
 

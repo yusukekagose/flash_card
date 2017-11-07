@@ -6,12 +6,12 @@
 
 <div class="row pt-4">
   <div>
-  <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="単語" aria-label="Search">
+  <%= form_tag root_path, method: :get, class: "form-inline" do %>
+    <%= text_field_tag :english_word, params[:english_word], placeholder: "単語", class: "form-control input-sm" %>
     <i class="fa fa-times" aria-hidden="true"></i>
-    <input class="form-control mr-sm-2" type="search" placeholder="意味" aria-label="Search">
-    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-  </form>
+    <%= text_field_tag :meaning, params[:meaning], placeholder: "意味", class: "form-control input-sm" %>
+    <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
+  <% end %>
   </div>
 </div>
 
