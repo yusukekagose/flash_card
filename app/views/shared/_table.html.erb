@@ -10,11 +10,11 @@
       <th>意味</th>
       <th>品詞</th>
       <th>例文</th>
-      <th>例文一覧</th>
-      <th>例文作成</th>
+      <th class="example-index">例文一覧</th>
+      <th class="create-example">例文作成</th>
       <% unless current_user.is_a?(GuestUser) %>
-      <th></th>
-      <th><%= f.submit '追加', :class => 'btn btn-primary'  %></th>
+      <th class="add-dictionary"></th>
+      <th class="add-dictionary"><%= f.submit '追加', :class => 'btn btn-primary'  %></th>
       <% end %>
       <% if current_user.has_roles?(:admin) %>
       <th>toeic</th>

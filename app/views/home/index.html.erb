@@ -1,4 +1,7 @@
 
+
+<%= form_tag root_path, method: :get, class: "form-inline" do %>
+
 <%= render "shared/side_bar" %>
 
 <div class="col-md-9">
@@ -6,14 +9,12 @@
 
 <div class="row pt-4">
   <div>
-  <%= form_tag root_path, method: :get, class: "form-inline" do %>
     <%= text_field_tag :english_word, params[:english_word], placeholder: "単語", class: "form-control input-sm" %>
     <i class="fa fa-times" aria-hidden="true"></i>
     <%= text_field_tag :meaning, params[:meaning], placeholder: "意味", class: "form-control input-sm" %>
     <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
-  <% end %>
   </div>
 </div>
-
+<% end %>
 <%= render "shared/table" %>
 </div>
