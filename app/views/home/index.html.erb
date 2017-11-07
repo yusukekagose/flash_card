@@ -1,20 +1,24 @@
 
+<%= form_tag root_path, method: :get, class: "form-tag" do %>
+<div class="row">
+  <div class="col-md-3">
+  <%= render "shared/side_bar" %>
+  </div>
+  <div class="col-md-9">
 
-<%= form_tag root_path, method: :get, class: "form-inline" do %>
 
-<%= render "shared/side_bar" %>
-
-<div class="col-md-9">
-
-
-<div class="row pt-4">
-  <div>
+  <div class="row p-4">
+  <div class="row form-section">
     <%= text_field_tag :english_word, params[:english_word], placeholder: "単語", class: "form-control input-sm" %>
     <i class="fa fa-times" aria-hidden="true"></i>
     <%= text_field_tag :meaning, params[:meaning], placeholder: "意味", class: "form-control input-sm" %>
     <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
   </div>
+  </div>
+  <% end %>
+  <%= render "shared/table" %>
+  </div>
+
 </div>
-<% end %>
-<%= render "shared/table" %>
-</div>
+
+

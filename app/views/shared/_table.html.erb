@@ -24,7 +24,8 @@
   </thead>
 
   <tbody>
-    <% @meanings.each do |meaning| %>
+    <% @words.each do |word| %>
+    <% word.meanings.each do |meaning| %>
       <tr>
         <% if current_user.has_roles?(:admin) %>
       　<td><%= meaning.word.id %></td>
@@ -56,7 +57,7 @@
         <% end %>
         <% end %>
 
-        <td><%= f.check_box :meaning_id,collection: @meanings.ids, class:"tag-chack-box" %>
+        <td><%= f.check_box :meaning_id,collection: meaning.id, class:"tag-chack-box" %>
 
         <% if current_user.has_roles?(:admin) %>
         <td><%= meaning.toeic %></td>
@@ -67,6 +68,7 @@
         <% end %>
          </td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 <% end %>

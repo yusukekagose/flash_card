@@ -4,11 +4,11 @@
 
 
 
-<div class="col-md-2 " id="sidebar">
     <div class=" list-group special  text-md-left">
     <a href="#menu1" class="text-center top-none list-group-item list-group-item-action d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><span class="d-none d-md-inline">LEVEL</span><span class="badge badge-secondary ml-2 align-center"><%= Word.count %></span></a>
     <div class="text-center" id="menu1">
         <% @level.each.with_index(1) do |level,i| %>
+        <%= check_box_tag :level, 1, params[:level] %>
         <a href="#menuSub<%= i %>" class=" top-none list-group-item list-group-item-action" data-toggle="collapse" aria-expanded="false"><%= level  %><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
         <div class="collapse" id="menuSub<%= i %>">
             <a href="#" class="top-none list-group-item list-group-item-action" data-parent="menu">
@@ -31,7 +31,6 @@
     <% end %>
     </div>
     </div>
-</div>
 
 
 
