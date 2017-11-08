@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    
+    @user_posts = current_user.examples
   end
 
   def index

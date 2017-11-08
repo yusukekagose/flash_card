@@ -14,7 +14,7 @@ module ApplicationHelper
     [
       {
         url: user_path(current_user),
-        title: '単語帳'
+        title: 'マイページ'
       },
       {
         url: dictionary_users_path,

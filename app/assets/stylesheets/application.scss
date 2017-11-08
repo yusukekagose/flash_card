@@ -16,54 +16,32 @@
 
 @import "bootstrap";
 @import "font-awesome";
-
-// COLORS
-$color-primary: #007bff;
-$color-primary-light: #7ed56f;
-$color-primary-dark: #28b485;
-
-$color-secondary-light: #ffb900;
-$color-secondary-dark: #ff7730;
-
-$color-tertiary-light: #2998ff;
-$color-tertiary-dark: #5643fa;
-
-$color-grey-light-1: #f7f7f7;
-$color-grey-light-2: #eee;
-
-$color-grey-dark: #777;
-$color-grey-dark-2: #999;
-$color-grey-dark-3: #333;
-
-$color-white: #fff;
-$color-black: #000;
+@import "base/variables";
+@import "base/base";
 
 
-// FONT
-$default-font-size: 1.6rem;
-
-
-html{
-  font-size: 92%;
+////////////
+#main_root {
+  display: flex;
 }
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
+.side-bar_root {
+  flex: 0 0 18%;
 }
-body{
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  box-sizing: border-box;
-  color: $color-grey-dark;
+.main-content_root {
+  flex: 1;
+  padding: 2rem;
 }
+
+/////////
+
+
 .tag-chack-box{
   transform: translateX(1.2rem) !important;
 }
 
 /* nav var items btn*/
 #home-nav{
-  height: 3.5rem !important;
+  height: 5rem !important;
 }
 .btn-original:link,
 .btn-original:visited{
@@ -72,6 +50,7 @@ body{
   padding: .5rem 2rem;
   margin-right: .5rem !important;
   display: inline-block;
+  font-size: 1.6rem;
   border-radius: 3rem;
   transition: all .2s;
 }
@@ -88,7 +67,7 @@ body{
 /* nav var items btn*/
 
 #site-nav-brand{
-  font-size: 2rem !important;
+  font-size: 4rem !important;
   font-weight: 900 !important;
 }
 .fa-times{
@@ -160,9 +139,6 @@ body{
   width: 115%;
   cursor: pointer;
 }
-body {
-  overflow-x: hidden;
-}
 
 #alphabet{
   margin-top: 40rem
@@ -171,10 +147,6 @@ body {
 .footer{
 
 }
-.container-90 {
-  width: 90%;
-}
-
 .nav-bar-items a{
   margin: 0 1rem;
 }
