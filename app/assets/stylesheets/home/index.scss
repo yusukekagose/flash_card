@@ -1,0 +1,10 @@
+#main_root {
+  display: flex;
+}
+.side-bar_root {
+  flex: 0 0 18%;
+}
+.main-content_root {
+  flex: 1;
+  padding: 2rem;
+}

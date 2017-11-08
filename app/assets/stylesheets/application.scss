@@ -16,23 +16,15 @@
 
 @import "bootstrap";
 @import "font-awesome";
+
 @import "base/variables";
 @import "base/base";
 
+@import "components/navbar";
 
-////////////
-#main_root {
-  display: flex;
-}
-.side-bar_root {
-  flex: 0 0 18%;
-}
-.main-content_root {
-  flex: 1;
-  padding: 2rem;
-}
+@import "home/index";
 
-/////////
+
 
 
 .tag-chack-box{
@@ -40,9 +32,7 @@
 }
 
 /* nav var items btn*/
-#home-nav{
-  height: 5rem !important;
-}
+
 .btn-original:link,
 .btn-original:visited{
   text-transform: uppercase;
@@ -64,12 +54,8 @@
   transform: translateY(-.05);
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
 }
-/* nav var items btn*/
 
-#site-nav-brand{
-  font-size: 4rem !important;
-  font-weight: 900 !important;
-}
+
 .fa-times{
   margin-right:.7rem;
   color: blue;
