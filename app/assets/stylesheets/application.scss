@@ -16,7 +16,6 @@
 
 @import "bootstrap";
 @import "font-awesome";
-
 @import "base/variables";
 @import "base/base";
 
@@ -56,10 +55,6 @@
 }
 
 
-.fa-times{
-  margin-right:.7rem;
-  color: blue;
-}
 .filter{
   float:right;
 }
@@ -177,7 +172,6 @@
     border-bottom: 3px solid $color-primary;
   }
 }
-
 
 
 //** sidebar

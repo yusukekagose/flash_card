@@ -1,0 +1,11 @@
+<nav class="side-bar_user">
+  <ul class="side-bar_user-nav">
+    <li class="side-bar_user-nav__root"><%= link_to root_path do %><span class="side-bar_user-nav__icon"><span>かり</span><span>.com</span><% end %></li>
+    <li class="side-bar_user-nav__item"><%= link_to user_path(current_user), class: "side-bar_user-nav__link" do %><span class="side-bar_user-nav__icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>POST<% end %></li>
+    <li class="side-bar_user-nav__item"><%= link_to user_path(current_user), class: "side-bar_user-nav__link" do %><span class="side-bar_user-nav__icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>POINT<% end %></li>
+    
+    
+    <li class="side-bar_user-nav__item"><%= link_to user_path(current_user), class: "side-bar_user-nav__link" do %><span class="side-bar_user-nav__icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>setting<% end %></li>
+    <li class="side-bar_user-nav__item"><%= link_to destroy_user_session_path, method: :delete, class: "side-bar_user-nav__link" do %><span class="side-bar_user-nav__icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>LOGOUT<% end %></li>
+  </ul>
+</nav>

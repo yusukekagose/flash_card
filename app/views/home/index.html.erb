@@ -1,5 +1,11 @@
 
-<%= form_tag root_path, method: :get, class: "form-tag" do %>
+<% if current_user.has_roles?(:admin) %>
+    <%= render "shared/admin_nav" %>
+  <% end %>
+    <%= render "shared/nav-bar" %>
+    <%= render "shared/sub_nav_bar" %>
+    <%= render "shared/notification_bar.html.erb" %>
+<%= form_tag root_path, method: :get do %>
 <div id="main_root" class="root-section">
 
   <div class="side-bar_root">
@@ -8,12 +14,12 @@
 
   <main class="main-content_root">
 
-    <form class="search-root">
-      <%= text_field_tag :english_word, params[:english_word], placeholder: "単語", class: "form-control input-sm" %>
-      <i class="fa fa-times" aria-hidden="true"></i>
-      <%= text_field_tag :meaning, params[:meaning], placeholder: "意味", class: "form-control input-sm" %>
-      <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
-    </form>
+    <div class="search-root">
+      <%= text_field_tag :english_word, params[:english_word], placeholder: "単語", class: "search-root__input" %>
+      <i class="fa fa-times search-root__icon" aria-hidden="true"></i>
+      <%= text_field_tag :meaning, params[:meaning], placeholder: "意味", class: "search-root__input" %>
+      <%= submit_tag "Search", name: nil, class: "btn btn-primary search-root__button" %>
+    </div>
 <% end %>
     <section class="table-content_root">
       <%= render "shared/table" %>

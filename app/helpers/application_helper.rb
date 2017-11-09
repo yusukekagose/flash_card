@@ -5,17 +5,15 @@ module ApplicationHelper
       " ".html_safe +
       (link_to "Login", new_user_session_path, class: style)
     else
-      link_to "Logout", destroy_user_session_path, method: :delete, class: style
+      (link_to "Logout", destroy_user_session_path, method: :delete, class: style) +
+      " ".html_safe +
+      (link_to "マイページ", user_path(current_user), class: style)
     end
   end
 
 
   def nav_items
     [
-      {
-        url: user_path(current_user),
-        title: 'マイページ'
-      },
       {
         url: dictionary_users_path,
         title: '単語帳'
