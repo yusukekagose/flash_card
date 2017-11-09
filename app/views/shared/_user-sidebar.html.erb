@@ -1,11 +1,11 @@
 <nav class="side-bar_user">
   <ul class="side-bar_user-nav">
     <li class="side-bar_user-nav__root"><%= link_to root_path do %><span class="side-bar_user-nav__icon"><span>かり</span><span>.com</span><% end %></li>
-    <li class="side-bar_user-nav__item"><%= link_to user_path(current_user), class: "side-bar_user-nav__link" do %><span class="side-bar_user-nav__icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>POST<% end %></li>
-    <li class="side-bar_user-nav__item"><%= link_to user_path(current_user), class: "side-bar_user-nav__link" do %><span class="side-bar_user-nav__icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>POINT<% end %></li>
-    
-    
-    <li class="side-bar_user-nav__item"><%= link_to user_path(current_user), class: "side-bar_user-nav__link" do %><span class="side-bar_user-nav__icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>setting<% end %></li>
-    <li class="side-bar_user-nav__item"><%= link_to destroy_user_session_path, method: :delete, class: "side-bar_user-nav__link" do %><span class="side-bar_user-nav__icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>LOGOUT<% end %></li>
+    <li class="side-bar_user-nav__item"><%= link_to user_path(current_user), class: "side-bar_user-nav__link" do %><span class="side-bar_user-nav__icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>CREATED<% end %></li>
+    <li class="side-bar_user-nav__item"><%= link_to user_path(current_user), class: "side-bar_user-nav__link" do %><span class="side-bar_user-nav__icon"><i class="fa fa-usd" aria-hidden="true"></i></span>POINT<% end %></li>
+  </ul>
+  <ul class="side-bar_user-nav-bottom">
+    <li class="side-bar_user-nav__bottom-item"><%= link_to user_path(current_user), class: "side-bar_user-nav__link" do %><span class="side-bar_user-nav__icon"><i class="fa fa-cog" aria-hidden="true"></i></span>setting<% end %></li>
+      <li class="side-bar_user-nav__bottom-item"><%= link_to destroy_user_session_path, method: :delete, class: "side-bar_user-nav__link" do %><span class="side-bar_user-nav__icon"><i class="fa fa-sign-out" aria-hidden="true"></i></span>LOGOUT<% end %></li>
   </ul>
 </nav>

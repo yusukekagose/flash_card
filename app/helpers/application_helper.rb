@@ -17,6 +17,10 @@ module ApplicationHelper
       {
         url: dictionary_users_path,
         title: '単語帳'
+      },
+      {
+        url: dictionary_users_path,
+        title: '単語帳'
       }
     ]
   end
