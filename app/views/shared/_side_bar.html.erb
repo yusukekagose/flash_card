@@ -2,6 +2,16 @@
 <% @level = ["begginer","novice","advanced beginner","intermediate","advanced intermediate","advanced","proficient","expert","scholar"] %>
 <% @toeics = [400,600,800] %>
 
+<nav class="sidebar">
+    <div class="sidebar__level">
+        <h3>Level<span class="badge badge-secondary ml-2 align-center"><%= Word.count %></span></h3>
+        <ul class="sidebar__level__list">
+        <% @level.each.with_index(1) do |level,i| %>
+          <li class="sidebar__level__list__item"><span><%= check_box_tag :level, i, params[:level] %></span><%= level %><span class="badge badge-secondary ml-2 align-center"><%=  %></span></li>
+        <% end %>
+        </ul>
+    </div>
+</nav>
 
 
     <div class=" list-group special  text-md-left">

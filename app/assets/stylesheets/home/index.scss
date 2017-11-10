@@ -19,7 +19,7 @@
 .search-root {
   display: flex;
   align-items:center;
-  padding: 2rem;
+  padding:2rem 5rem;
   &__input {
     border:1px solid gray;
     border-radius: 3px;
@@ -45,5 +45,12 @@
               transform: translateY(2px);
     }
 
+  }
+}
+.main-content_root {
+
+  &__table {
+    width: 90%;
+    margin: 0 auto;
   }
 }

@@ -1,10 +1,4 @@
 
-<% if current_user.has_roles?(:admin) %>
-  <%= render "shared/admin_nav" %>
-<% end %>
-<%= render "shared/nav-bar" %>
-<%= render "shared/sub_nav_bar" %>
-<%= render "shared/notification_bar.html.erb" %>
 <%= form_tag root_path, method: :get do %>
 <div id="main_root" class="root-section">
 
@@ -17,7 +11,7 @@
       <%= render "shared/root-search" %>
     </div>
 <% end %>
-    <section class="table-content_root">
+    <section class="main-content_root__table">
       <%= render "shared/table" %>
     </section>
   </main>

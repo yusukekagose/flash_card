@@ -1,0 +1,15 @@
+<div class="content_user__main">
+  <div class="content_user__main__prof">
+    <%= image_tag("user.jpg", class:"content_user__main__prof__img") %>
+    <div class="content_user__main__prof__name">
+      <span>nickname:</span><%= current_user.nick_name %>
+    </div>
+  </div>
+  <div class="content_user__main__content">
+    <ul class="content_user__main__content__items">
+      <li class="content_user__main__content__items__item"><%= current_user.dictionaries.count %>Likes</li>
+      <li class="content_user__main__content__items__item"><%= current_user.examples.count %>sentences</li>
+      <li class="content_user__main__content__items__item"> 3 followers</li>
+    </ul>
+  </div>
+</div>

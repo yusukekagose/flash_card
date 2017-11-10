@@ -9,7 +9,12 @@
   </head>
 
   <body>
-  
+    <% if current_user.has_roles?(:admin) %>
+    <%= render "shared/admin_nav" %>
+    <% end %>
+    <%= render "shared/nav-bar" %>
+    <%= render "shared/sub_nav_bar" %>
+    <%= render "shared/notification_bar.html.erb" %>
     <%= yield %>
 
 

@@ -1,3 +1,4 @@
+
 <table class="table table-hover table-sm">
  <%= simple_form_for(@dictionary) do |f|  %>
   <thead>
@@ -6,15 +7,15 @@
       <th>#</th>
       <th>#</th>
       <% end %>
-      <th>英語</th>
-      <th>意味</th>
-      <th>品詞</th>
-      <th>例文</th>
-      <th class="example-index">例文一覧</th>
-      <th class="create-example">例文作成</th>
+      <th width="12%">英語</th>
+      <th width="12%">意味</th>
+      <th width="5%">品詞</th>
+      <th width="30%">例文</th>
+      <th class="example-index" width="5%"></th>
+      <th class="create-example" width="5%"></th>
       <% unless current_user.is_a?(GuestUser) %>
-      <th class="add-dictionary"></th>
-      <th class="add-dictionary"><%= f.submit '追加', :class => 'btn btn-primary'  %></th>
+      <th class="add-dictionary" width="5%"></th>
+      <th class="add-dictionary" width="5%"><%= f.submit '追加', :class => 'btn btn-primary'  %></th>
       <% end %>
       <% if current_user.has_roles?(:admin) %>
       <th>toeic</th>
@@ -31,22 +32,22 @@
       　<td><%= meaning.word.id %></td>
         <td><%= meaning.id %></td>
         <% end %>
-        <td><%= meaning.word.english_word %></td>
-        <td><%= meaning.meaning %></td>
-        <td><%= meaning.parse %></td>
-        <td>
+        <td width="12%"><%= meaning.word.english_word %></td>
+        <td width="12%"><%= meaning.meaning %></td>
+        <td width="5%"><%= meaning.parse %></td>
+        <td width="25%">
         <% meaning.examples.first(1).each do |meaning_example| %>
         <%= meaning_example.sentence.capitalize  %><br>
         <%= meaning_example.translation %><br>
         <% end %>
         </td>
-        <td><%= link_to "一覧", meaning_examples_meaning_path(meaning.id) , class: "btn-sm btn-primary" %></td>
-        <td>
+        <td  width="5%"><%= link_to "一覧", meaning_examples_meaning_path(meaning.id) , class: "btn btn-primary" %></td>
+        <td width="5%">
           <%= example_creation_button_toggle_helper meaning %>
         </td>
         <% unless current_user.is_a?(GuestUser) %>
         <%= simple_form_for(@dictionary) do |f|  %>
-        <td>
+        <td width="3%">
           <%if Dictionary.where(user: current_user).where(meaning_id: meaning.id).present? %>
           <i class="fa fa-book fa-book-existed" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="追加済み">
           <% else %>
@@ -57,7 +58,7 @@
         <% end %>
         <% end %>
 
-        <td><%= f.check_box :meaning_id,collection: meaning.id, class:"tag-chack-box" %>
+        <td width="5%"><%= f.check_box :meaning_id,collection: meaning.id, class:"tag-chack-box" %>
 
         <% if current_user.has_roles?(:admin) %>
         <td><%= meaning.toeic %></td>

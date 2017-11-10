@@ -68,9 +68,9 @@ module ApplicationHelper
     max_example_numbers = 5
 
     if object.examples.count.to_i > max_example_numbers
-      link_to "例文作る" , "#{request.url}", class: "btn-sm btn-secondary disabled"
+      link_to "例文作る" , "#{request.url}", class: "btn btn-secondary disabled"
     else
-      link_to "例文作る" , new_meaning_example_path(object.id), class: "btn-sm btn-warning text-white"
+      link_to "例文作る" , new_meaning_example_path(object.id), class: "btn btn-warning text-white"
     end
 
   end
