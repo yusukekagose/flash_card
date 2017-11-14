@@ -17,10 +17,15 @@
 //= require_tree .
 //= require bootstrap-sprockets
 
+$( document ).on('turbolinks:load', function() {
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+});
 
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+
+
+
 
 
 $( function() {

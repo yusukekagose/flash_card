@@ -1,14 +1,30 @@
 <% @part = [1,2,3,4,5] %>
-<% @level = ["begginer","novice","advanced beginner","intermediate","advanced intermediate","advanced","proficient","expert","scholar"] %>
+<% @level = ["begginer","novice","A beginner","intermediate","A intermediate","advanced","proficient","expert","scholar"] %>
 <% @toeics = [400,600,800] %>
 
 <nav class="sidebar">
     <div class="sidebar__level">
-        <h3>Level<span class="badge badge-secondary ml-2 align-center"><%= Word.count %></span></h3>
         <ul class="sidebar__level__list">
+        <% active = params[:level] == nil || params[:level].empty? ? 'active' : '' %>
+        <li class="sidebar__level__list__item <%= active %>">
+          <%= link_to "LEVEL" ,root_path, class: "#{active} sidebar__level__list__item__title" %><span class="badge badge-secondary ml-2 align-center"><%= Word.count %></span>
+        </li>
         <% @level.each.with_index(1) do |level,i| %>
-          
-          <li class="sidebar__level__list__item"><span><%= link_to "#{level}" ,root_path(level: i) %></span><span class="badge badge-secondary ml-2 align-center"><%=  Word.eager_load(:meanings).where(meanings: {level: i.to_i}).count %></span></li>
+          <% active = params[:level].to_i == i ? 'active' : '' %>
+          <li class="sidebar__level__list__item <%= active %>"><span><%= link_to "#{level}" ,root_path(level: i), class: "#{active} sidebar__level__list__item__link" %></span><span class="badge badge-secondary ml-2 align-center"><%=  Word.eager_load(:meanings).where(meanings: {level: i.to_i}).count %></span></li>
+        <% end %>
+        </ul>
+    </div>
+
+    <div class="sidebar__toeic">
+        <ul class="sidebar__level__list">
+        <% active = params[:toeic] == nil || params[:toeic].empty? ? 'active' : '' %>
+        <li class="sidebar__level__list__item <%= active %>">
+          <%= link_to "TOEIC" ,root_path, class: "#{active} sidebar__level__list__item__title" %><span class="badge badge-secondary ml-2 align-center"><%= Word.count %></span>
+        </li>
+        <% @toeics.each.with_index(1) do |toeic,i| %>
+          <% active = params[:toeic].to_i == i ? 'active' : '' %>
+          <li class="sidebar__level__list__item <%= active %>"><span><%= link_to "#{toeic}" ,root_path(toeic: i), class: "#{active} sidebar__level__list__item__link" %></span><span class="badge badge-secondary ml-2 align-center"><%=  Word.eager_load(:meanings).where(meanings: {toeic: i.to_i}).count %></span></li>
         <% end %>
         </ul>
     </div>

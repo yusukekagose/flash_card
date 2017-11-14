@@ -1,6 +1,5 @@
 
-<%= form_tag root_path, method: :get do %>
-<%= hidden_field_tag :level, params[:level] %>
+
 <div id="main_root" class="root-section">
 
   <div class="side-bar_root">
@@ -8,10 +7,8 @@
   </div>
 
   <main class="main-content_root">
-    <div class="search-root">
-      <%= render "shared/root-search" %>
-    </div>
-<% end %>
+    <%= render "shared/root-search" %>
+
     <section class="main-content_root__table">
       <%= render "shared/table" %>
     </section>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/dashboard', to:'home#dashboard'
+
   resources :rankings, only: [:index]
 
   resources :likes, only: [:destroy,:create,:index]

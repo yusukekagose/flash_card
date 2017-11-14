@@ -20,11 +20,43 @@
 @import "base/base";
 
 @import "components/navbar";
+@import "components/sidebar";
+@import "components/dashboard";
 
 @import "home/index";
 
 
+.sidebar{
+  font-size: 1.8rem;
+  &__level {
+    margin-bottom:2rem;
+    border-bottom: 2px solid $color-grey-dark;
+    &__list {
 
+      &__item {
+        height: 4rem;
+        padding:1rem 0 1rem 2rem;
+        &__title {
+          font-size: 2rem;
+          &:link,
+          &:visited {
+            color: $color-black;
+          }
+        }
+        &__link {
+          &:link,
+          &:visited {
+            color: $color-grey-dark;
+          }
+        }
+      }
+    }
+  }
+}
+.active {
+  font-weight: 800;
+  color: $color-black !important;
+}
 
 .tag-chack-box{
   transform: translateX(1.2rem) !important;
@@ -55,9 +87,6 @@
 }
 
 
-.filter{
-  float:right;
-}
 .fa-book{
   font-size:1.5rem;
   transform: translateY(-1.9rem);
@@ -104,15 +133,6 @@
 .top-none{
   border-top: 0 none !important;
 }
-.special .list-group-item:first-child {
-   border-top-right-radius: 0 !important;
-   border-top-left-radius: 0 !important;
-}
-
-.special .list-group-item:last-child {
-  border-bottom-right-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
-}
 .circle-btn {
  border-radius: 50%;
 }
@@ -121,13 +141,6 @@
   cursor: pointer;
 }
 
-#alphabet{
-
-}
-
-.footer{
-
-}
 .nav-bar-items a{
   margin: 0 1rem;
 }
@@ -136,15 +149,7 @@
 }
 /////////////////////
 ////////table
-.example-index {
-  width: 5rem;
-}
-.create-example {
-  width: 6rem;
-}
-.add-dictionary {
-  width: 3rem;
-}
+
 //////////////////////////////
 
 ////////////////////////////
@@ -152,13 +157,9 @@
 .form-tag {
   width:90%;
 }
-.form-section {
-  display: inline-block;
-}
-
 /////////////
 .fa-times{
-  margin-left: 1.6rem
+  margin-left: 1.6rem;
 }
 
 .form_input {

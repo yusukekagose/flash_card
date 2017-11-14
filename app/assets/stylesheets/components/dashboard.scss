@@ -1,0 +1,80 @@
+@import "bootstrap";
+@import "font-awesome";
+@import "base/variables";
+
+.dashboard {
+  background-color: #f6f7f7;
+  width: 100%;
+  height: 80rem;
+  padding: 3rem;
+  display: flex;
+  &__sidebar {
+    flex:0 0 18%;
+    &__list {
+        font-size: 2rem;
+        list-style-type: none;
+        margin-top: 1.5rem;
+      &__link {
+        margin-top: 1rem;
+      }
+    }
+  }
+  &__main {
+    flex: 1;
+    background-color: $color-white;
+    box-shadow: .1rem .1rem .1rem .1rem rgba(#777, .5);
+    &__searchform {
+      display: flex;
+      padding: 1.5rem;
+      align-items:center;
+      justify-content: space-between;
+      &__title {
+        font-size: 2.3rem;
+        font-weight: 800;
+        margin-left: 3rem;
+      }
+      &__form {
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        height: 3.5rem;
+        .input {
+          border-radius: 2rem 0 0 2rem;
+          border: .1rem solid #f6f7f7;
+          padding-left: 1.8rem;
+          outline: none;
+          width: 25rem;
+          height: 3.5rem;
+          border-radius: none !important;
+        }
+        .submit {
+          border: none;
+          background-color: #f6f7f7;
+          color: black;
+          padding: .6rem 2rem;
+          border-radius: 0 2rem 2rem 0;
+          -webkit-transform: translateX(-2.6rem);
+             -moz-transform: translateX(-2.6em);
+              -ms-transform: translateX(-2.6rem);
+               -o-transform: translateX(-2.6rem);
+                  transform: translateX(-2.6rem);
+        }
+
+      }
+      &__btn {
+        margin-right: 3rem;
+        &__button {
+          padding: 1rem;
+          background-color: orangered;
+          font-size: 2rem;
+          border-radius: 3px;
+          &:link,
+          &:visited {
+            text-decoration: none;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

@@ -10,4 +10,5 @@ class UsersController < ApplicationController
   def dictionary
     @user_dictionary = current_user.dictionaries
   end
+
 end

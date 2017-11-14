@@ -9,7 +9,7 @@ class DictionariesController < ApplicationController
 
     @dictionary = Dictionary.new(dictionary_params)
     if @dictionary.save
-      redirect_to meanings_path, notice: 'Dicionary was successfully created.'
+      redirect_to root_path, notice: 'Dicionary was successfully created.'
     else
       redirect_to request.referrer, alert: 'Dicionary aleready exists.'
     end

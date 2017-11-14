@@ -1,0 +1,27 @@
+<div class="dashboard">
+  <div class="dashboard__sidebar">
+    <ul class="dashboard__sidebar__list">
+      <li class="dashboard__sidebar__list__link">ユーザー</li>
+      <li class="dashboard__sidebar__list__link">単語</li>
+      <li class="dashboard__sidebar__list__link">英文</li>
+    </ul>
+  </div>
+  <div class="dashboard__main">
+    <div class="dashboard__main__searchform">
+      <div class="dashboard__main__searchform__title">User</div>
+      <div class="dashboard__main__searchform__form">
+        <%= form_tag root_path, method: :get do %>
+        <%= text_field_tag :meaning, params[:meaning], placeholder: "意味", class: "input" %>
+        <%= submit_tag "Search", name: nil, class: "submit" %>
+        <% end %>
+      </div>
+      <div class="dashboard__main__searchform__btn">
+        <%= link_to "new user" , root_path, class: "dashboard__main__searchform__btn__button"%>
+      </div>
+    </div>
+    <div class="dashboard__main__content">
+      
+    </div>
+
+  </div>
+</div>
