@@ -7,7 +7,7 @@ class LikesController < ApplicationController
     if @like.save
       redirect_to request.referrer, notice: 'Like was successfully created.'
     else
-      redirect_to request.referrer, alert: 'Like alerady exist' 
+      redirect_to request.referrer, alert: 'Like failed to save'
     end
   end
 
@@ -16,6 +16,6 @@ class LikesController < ApplicationController
 
   private
     def like_params
-      params.require(:like).permit(:example_id).merge(user_id: current_user.id)
+      params.require(:like).permit(:example_id, :user_id).merge(voter: current_user.id)
     end
 end

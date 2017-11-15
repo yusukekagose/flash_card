@@ -19,13 +19,17 @@
         <td><%= example.translation %></td>
 
         <%= simple_form_for(@like) do |f|  %>
-        <% if example.likes.where(user_id: current_user.id).exists? %>
-        <td><i class="fa fa-thumbs-up thumbs-uped" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="いいね済み">
-        <%= Like.where(example_id: example.id).count %>
+        <% if example.user.id == current_user.id %>
+          <td><i class="fa fa-thumbs-up thumbs-uped" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="あなたの投稿です">
+          <%= Like.where(example_id: example.id).count %>
         </td>
+        <% elsif Like.where(example_id: example.id).where(voter: current_user.id).exists? %>
+          <td><i class="fa fa-thumbs-up thumbs-uped" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="いいね済みです">
+            <%= Like.where(example_id: example.id).count %>
         <% else %>
         <td>
-          <%= f.input :example_id, :as => :hidden, :input_html => { :value => example.id, style: "display:none;" } %>
+          <%=  f.input :example_id, :as => :hidden, :input_html => { :value => example.id } %>
+          <%=  f.input :user_id, :as => :hidden, :input_html => { :value => example.user.id } %>
           <%= button_tag(type: 'submit', class: "btn btn-link btn-thums-up") do %><i class="fa fa-thumbs-up" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="ナイス"></i>
           <% end %>
           <span class="like-count"><%= Like.where(example_id: example.id).count %></span>
