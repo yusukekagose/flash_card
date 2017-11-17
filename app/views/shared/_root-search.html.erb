@@ -3,6 +3,7 @@
 <div class="search-root__wrapper">
 <%= form_tag root_path, method: :get do %>
 <%= hidden_field_tag :level, params[:level] %>
+<%= hidden_field_tag :toeic, params[:toeic] %>
 <%= text_field_tag :english_word, params[:english_word], placeholder: "単語", class: "search-root__wrapper__input input-word" %>
 <%= text_field_tag :meaning, params[:meaning], placeholder: "意味", class: "search-root__wrapper__input input-meaning" %>
 <%= select_tag :parse, options_for_select([["品詞", ""], ["動詞", "動"],["形容動詞","形動"]], { selected: "" }),  :include_blank => true, class: "search-root__wrapper__select" %>

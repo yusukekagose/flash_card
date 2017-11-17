@@ -20,7 +20,7 @@
         <ul class="sidebar__level__list">
         <% active = params[:toeic] == nil || params[:toeic].empty? ? 'active' : '' %>
         <li class="sidebar__level__list__item <%= active %>">
-          <%= link_to "TOEIC" ,root_path, class: "#{active} sidebar__level__list__item__title" %><span class="badge badge-secondary ml-2 align-center"><%= Word.count %></span>
+          <%= link_to "TOEIC" ,root_path(toeic: ""), class: "#{active} sidebar__level__list__item__title" %><span class="badge badge-secondary ml-2 align-center"><%= Word.count %></span>
         </li>
         <% @toeics.each.with_index(1) do |toeic,i| %>
           <% active = params[:toeic].to_i == i ? 'active' : '' %>
