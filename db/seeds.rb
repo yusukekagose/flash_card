@@ -46,3 +46,4 @@ Word.create!(english_word: "as")
 Meaning.create!(word_id: word_id += 1, meaning: "として", parse: d)
 Word.create!(english_word: "think")
 Meaning.create!(word_id: word_id += 1, meaning: "考える", parse: d)
+

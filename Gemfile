@@ -81,4 +81,6 @@ gem 'font-awesome-rails', '~> 4.7.0.2'
 
 gem 'simple_form', '~> 3.5'
 
+gem 'kaminari'
+
 
