@@ -5,7 +5,7 @@ class User < ApplicationRecord
   ## The :root_admin can access any page regardless of access settings. Use with caution!   ##
   ## The multiple option can be set to true if you need users to have multiple roles.       ##
   petergate(roles: [:admin, :editor], multiple: false)                                      ##
-  ############################################################################################ 
+  ############################################################################################
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -17,6 +17,23 @@ class User < ApplicationRecord
 
   has_many :dictionaries
   has_many :likes
+
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << csv_column_names
+      all.each do |dictionary|
+        csv << dictionary.csv_column_values
+      end
+    end
+  end
+
+  def self.csv_column_names
+    ["単語","意味"]
+  end
+
+  def csv_column_values
+    [meaning, meaning.meaning]
+  end
 
 
 
