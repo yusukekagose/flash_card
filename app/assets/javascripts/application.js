@@ -26,8 +26,6 @@ $( document ).on('turbolinks:load', function() {
 
 
 
-
-
 $( function() {
     $( "#accordion" ).click();
   } );
