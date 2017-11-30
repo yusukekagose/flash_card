@@ -13,8 +13,6 @@ class UsersController < ApplicationController
     @user_dictionary = current_user.dictionaries if params[:c] == "all"
     @user_dictionary = @user_dictionary.eager_load(:meaning).where('toeic IS NOT NULL') if params[:c] == "toeic"
 
-    @dictionary = Dictionary.where(user_id: current_user.id)
-
     bom = "\xFF\xFE".force_encoding("UTF-16LE")
     respond_to do |format|
       format.html

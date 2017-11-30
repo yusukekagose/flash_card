@@ -6,7 +6,6 @@ class DictionariesController < ApplicationController
   end
 
   def create
-
     @dictionary = Dictionary.new(dictionary_params)
     if @dictionary.save
       redirect_to root_path, notice: 'Dicionary was successfully created.'
